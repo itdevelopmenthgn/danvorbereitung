@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Database Test</title>
+</head>
+<body>
+    <h1>Datenbank-Test</h1>
+    <div id="output"></div>
+
+    <script src="techniken-data.js"></script>
+    <script src="kansetsu-data.js"></script>
+    <script src="shime-data.js"></script>
+    <script src="nage-data.js"></script>
+
+    <script>
+        const output = document.getElementById('output');
+        let html = '<h2>Geladene Datenbanken:</h2>';
+
+        html += '<h3>OSAEKOMI_WAZA:</h3>';
+        if (typeof OSAEKOMI_WAZA !== 'undefined') {
+            html += '<p>✅ Geladen: ' + OSAEKOMI_WAZA.length + ' Techniken</p>';
+            html += '<ul>';
+            OSAEKOMI_WAZA.forEach(t => {
+                html += '<li>' + t.id + ' - ' + t.name + '</li>';
+            });
+            html += '</ul>';
+        } else {
+            html += '<p>❌ NICHT geladen</p>';
+        }
+
+        html += '<h3>KANSETSU_WAZA:</h3>';
+        if (typeof KANSETSU_WAZA !== 'undefined') {
+            html += '<p>✅ Geladen: ' + KANSETSU_WAZA.length + ' Techniken</p>';
+            html += '<ul>';
+            KANSETSU_WAZA.forEach(t => {
+                html += '<li>' + t.id + ' - ' + t.name + '</li>';
+            });
+            html += '</ul>';
+        } else {
+            html += '<p>❌ NICHT geladen</p>';
+        }
+
+        html += '<h3>SHIME_WAZA:</h3>';
+        if (typeof SHIME_WAZA !== 'undefined') {
+            html += '<p>✅ Geladen: ' + SHIME_WAZA.length + ' Techniken</p>';
+            html += '<ul>';
+            SHIME_WAZA.forEach(t => {
+                html += '<li>' + t.id + ' - ' + t.name + '</li>';
+            });
+            html += '</ul>';
+        } else {
+            html += '<p>❌ NICHT geladen</p>';
+        }
+
+        html += '<h3>NAGE_WAZA:</h3>';
+        if (typeof NAGE_WAZA !== 'undefined') {
+            html += '<p>✅ Geladen: ' + NAGE_WAZA.length + ' Techniken</p>';
+            html += '<p>Erste Technik: ' + NAGE_WAZA[0].id + ' - ' + NAGE_WAZA[0].name + '</p>';
+        } else {
+            html += '<p>❌ NICHT geladen</p>';
+        }
+
+        output.innerHTML = html;
+
+        // Test Click Simulation
+        console.log('=== CLICK TEST ===');
+        console.log('Test ID: kesa-gatame');
+        if (typeof OSAEKOMI_WAZA !== 'undefined') {
+            const found = OSAEKOMI_WAZA.find(t => t.id === 'kesa-gatame');
+            console.log('Found in OSAEKOMI_WAZA:', found ? found.name : 'NOT FOUND');
+        }
+    </script>
+</body>
+</html>

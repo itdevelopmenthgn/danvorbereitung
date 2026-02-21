@@ -18,11 +18,34 @@
     --shadow-hover: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* PWA Safe Area Support for notched devices */
+@supports(padding: max(0px)) {
+    body {
+        padding-left: max(0px, env(safe-area-inset-left));
+        padding-right: max(0px, env(safe-area-inset-right));
+    }
+
+    .navbar {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+        padding-top: max(1rem, env(safe-area-inset-top));
+    }
+
+    footer {
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     background: #fafafa;
+    /* Better touch scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* Prevent text selection on double-tap */
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(196, 30, 58, 0.2);
 }
 
 /* Navigation */
@@ -404,11 +427,35 @@ body {
 
 .technique-name {
     font-weight: 500;
+    flex: 1;
+}
+
+.technique-translation {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    flex: 2;
+}
+
+.technique-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.technique-list .technique-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
 }
 
 .status-icon {
     font-size: 1.2rem;
     font-weight: 700;
+    min-width: 30px;
+    text-align: center;
 }
 
 .technique-item.mastered .status-icon {
@@ -959,6 +1006,137 @@ footer {
     .vocab-category {
         padding: 1.5rem 1rem;
     }
+
+    /* Mobile optimizations for new sections */
+    .gokyo-groups,
+    .pattern-grid,
+    .counter-patterns,
+    .grip-patterns,
+    .timing-principles,
+    .detailed-counters,
+    .counter-training,
+    .ukemi-mistakes,
+    .ukemi-training,
+    .philosophy-grid,
+    .etiquette-rules {
+        grid-template-columns: 1fr;
+    }
+
+    .bio-header {
+        flex-direction: column;
+    }
+
+    .bio-image-placeholder {
+        width: 150px;
+        height: 180px;
+        margin: 0 auto;
+    }
+
+    .placeholder-text {
+        font-size: 1.5rem;
+    }
+
+    .combo-example,
+    .training-drill,
+    .finte-example,
+    .counter-detail,
+    .ukemi-detail {
+        padding: 1rem;
+    }
+
+    .section-intro h3 {
+        font-size: 1.2rem;
+    }
+
+    .ukemi-level {
+        padding: 1rem;
+    }
+
+    .level-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Improve touch targets */
+    .technique-item,
+    .btn,
+    .nav-menu a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Dropdown improvements for mobile */
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu {
+        position: relative;
+        top: 0;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Better video embeds on mobile */
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Responsive tables */
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .section {
+        padding: 1.5rem 1rem;
+    }
+
+    .info-box,
+    .technique-card {
+        padding: 1rem;
+    }
+
+    .navbar {
+        padding: 0.8rem 0;
+    }
+
+    .logo h1 {
+        font-size: 1.3rem;
+    }
 }
 
 /* Print Styles */
@@ -973,4 +1151,841 @@ footer {
         display: block !important;
         page-break-after: always;
     }
+}
+
+/* Nage-Waza Specific Styles */
+.gokyo-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.gokyo-group-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.gokyo-group-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+    text-decoration: none;
+}
+
+.gokyo-group-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.group-number {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.techniques-count {
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.technique-preview {
+    list-style: none;
+    margin: 1rem 0;
+    padding-left: 0;
+}
+
+.technique-preview li {
+    padding: 0.3rem 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.technique-preview li:before {
+    content: "→ ";
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.technique-type-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.technique-group {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: var(--accent-color);
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+.waza-type-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.key-points-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.key-points-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.key-points-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Kombinationen, Konter, Griffkampf Styles */
+.combination-patterns,
+.counter-patterns,
+.grip-patterns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.pattern-card,
+.counter-card,
+.grip-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.pattern-card:hover,
+.counter-card:hover,
+.grip-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.pattern-card h3,
+.counter-card h3,
+.grip-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.pattern-example {
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.counter-example,
+.grip-detail {
+    margin-top: 0.8rem;
+}
+
+.counter-example p,
+.grip-detail p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+/* Timing Principles */
+.timing-principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.timing-card {
+    background: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 6px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.timing-card h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Detailed Counter Techniques */
+.detailed-counters {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.counter-detail {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.counter-detail h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.counter-detail ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.counter-detail li {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+/* Counter Training */
+.counter-training {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Ukemi/Fallschule Styles */
+.ukemi-progression {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.ukemi-level {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+}
+
+.level-badge {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.ukemi-level h4 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.ukemi-detail {
+    background: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+.ukemi-detail h5 {
+    color: var(--secondary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.ukemi-detail h5:first-child {
+    margin-top: 0;
+}
+
+.ukemi-detail ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.ukemi-detail li {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+/* Ukemi Mistakes */
+.ukemi-mistakes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.mistake-card {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1.5rem;
+    border-radius: 6px;
+}
+
+.mistake-card h4 {
+    color: #856404;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.mistake-card p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Ukemi Training */
+.ukemi-training {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.grip-strategies {
+    margin: 2rem 0;
+    background: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.grip-strategies h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.strategy-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.strategy-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.strategy-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.strategy-item p {
+    color: var(--text-light);
+    margin: 0;
+}
+
+.info-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.info-box h3 {
+    color: white;
+    margin-bottom: 0.8rem;
+}
+
+.info-box p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Technique Group Explanations */
+.technique-group-explanation {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--accent-color);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.group-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.subgroup-title {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin: 1.5rem 0 1rem 0;
+    padding: 0.5rem;
+    background: white;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+}
+
+/* Combination Details */
+.combination-details,
+.training-combinations,
+.finten-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.combination-details h3,
+.training-combinations h3,
+.finten-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.combo-example,
+.training-drill,
+.finte-example {
+    background: var(--accent-color);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.combo-example h4,
+.training-drill h4,
+.finte-example h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.combo-example ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.combo-example ol li {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.combo-example p,
+.training-drill p,
+.finte-example p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.pattern-detail {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.pattern-detail ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+}
+
+.pattern-detail li {
+    padding: 0.3rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.pattern-detail li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.section-intro {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* Touch feedback and active states */
+.technique-item:active,
+.btn:active,
+.gokyo-group-card:active,
+.pattern-card:active,
+.counter-card:active,
+.grip-card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+button:active,
+a.btn:active {
+    opacity: 0.8;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Better link styles for touch */
+a {
+    -webkit-tap-highlight-color: rgba(196, 30, 58, 0.2);
+}
+
+/* Prevent zoom on input focus (iOS) */
+input,
+textarea,
+select {
+    font-size: 16px;
+}
+
+/* PWA install prompt styling */
+.install-prompt {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 1000;
+}
+
+.install-prompt.show {
+    display: block;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.install-prompt .btn-install {
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+/* Jigoro Kano Biography Styles */
+.biography-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.bio-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: flex-start;
+}
+
+.bio-image-placeholder {
+    width: 200px;
+    height: 250px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.placeholder-text {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+.bio-intro {
+    flex: 1;
+}
+
+.bio-intro h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.bio-dates {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.bio-section {
+    margin: 3rem 0;
+}
+
+.bio-section h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.timeline-item {
+    background: var(--accent-color);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--secondary-color);
+    border-radius: 0 8px 8px 0;
+}
+
+.timeline-item h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+}
+
+.kano-philosophy {
+    margin: 2rem 0;
+}
+
+.philosophy-point {
+    background: white;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.philosophy-point h5 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.philosophy-point .quote {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.philosophy-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary-color);
+}
+
+.philosophy-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.quote-box {
+    background: var(--accent-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.quote-box h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.quote-box blockquote {
+    background: white;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-left: 4px solid var(--primary-color);
+    font-style: italic;
+    line-height: 1.8;
+}
+
+/* Etiquette Styles */
+.etiquette-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.etiquette-section {
+    margin: 2.5rem 0;
+}
+
+.etiquette-detail {
+    background: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.etiquette-detail ol,
+.etiquette-detail ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.etiquette-detail li {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.step-by-step {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.step {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.step h5 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.kata-knot-section {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border: 2px solid var(--primary-color);
+}
+
+.gi-info {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin: 1rem 0;
+}
+
+.etiquette-rules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.rule-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--success-color);
+}
+
+.rule-card.warning {
+    border-top-color: var(--warning-color);
+}
+
+.rule-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.rule-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.rule-card ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.rule-card ul li:before {
+    position: absolute;
+    left: 0;
+}
+
+.rule-card:not(.warning) ul li:before {
+    content: "✅";
+}
+
+.rule-card.warning ul li:before {
+    content: "❌";
+}
+
+.info-note {
+    background: #fff3cd;
+    border-left: 4px solid var(--warning-color);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 4px;
 }

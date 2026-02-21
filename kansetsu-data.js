@@ -7,7 +7,7 @@ const KANSETSU_WAZA = [
         name: "Juji-gatame",
         nameDE: "Armstreckhebel / Kreuz-Armhebel",
         kategorie: "Kansetsu-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/OWgSOlCuMXw", // Kodokan Official (Ude-hishigi-juji-gatame)
 
         beschreibung: {
             position: "Du kontrollierst den gestreckten Arm des Gegners zwischen deinen Beinen, sein Ellenbogen zeigt nach oben, du hebst deine Hüfte.",
@@ -279,7 +279,7 @@ const KANSETSU_WAZA = [
         name: "Ude-garami",
         nameDE: "Armschlüssel / Americana / Figure-4 Armlock",
         kategorie: "Kansetsu-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/AIlTvZb4RlE", // Kodokan Official
 
         beschreibung: {
             position: "Du kontrollierst Gegners Arm in Figure-4 Position (dein Arm durch seinen Arm), sein Ellenbogen ist angewinkelt, Druck nach unten/hinten.",
@@ -516,7 +516,7 @@ const KANSETSU_WAZA = [
         name: "Waki-gatame",
         nameDE: "Achselhebel / Armpit Armlock",
         kategorie: "Kansetsu-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/8F5p1zuJRG0", // Kodokan Official (Ude-hishigi-waki-gatame)
 
         beschreibung: {
             position: "Du kontrollierst Gegners gestreckten Arm, deine Achsel klemmt seinen Ellenbogen, du hebst sein Handgelenk.",
@@ -726,7 +726,7 @@ const KANSETSU_WAZA = [
         name: "Ude-gatame",
         nameDE: "Armstrecker / Straight Armbar",
         kategorie: "Kansetsu-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/SBf0aTma1VI", // Kodokan Official (Ude-hishigi-ude-gatame)
 
         beschreibung: {
             position: "Gegners Arm wird über deine Schulter/Unterarm gestreckt, ähnlich Juji-gatame aber ohne Beine.",
@@ -913,7 +913,7 @@ const KANSETSU_WAZA = [
         name: "Hiza-gatame",
         nameDE: "Kniehebel / Knee Bar",
         kategorie: "Kansetsu-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/H2HtAJdiJcE", // Kodokan Official (Ude-hishigi-hiza-gatame)
 
         beschreibung: {
             position: "Du kontrollierst Gegners Bein, sein Knie wird über deine Hüfte gestreckt, ähnlich wie Juji-gatame aber für Bein.",
@@ -1182,7 +1182,7 @@ const KANSETSU_WAZA = [
         name: "Sankaku-gatame",
         nameDE: "Dreieck-Armhebel / Triangle Armlock",
         kategorie: "Kansetsu-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/WefAmW4azhk", // Kodokan Official (Ude-hishigi-sankaku-gatame)
 
         beschreibung: {
             position: "Deine Beine bilden Dreieck um Gegners Arm und Kopf, sein Arm wird durch Beindruck gestreckt/gehebelt.",
@@ -1439,7 +1439,7 @@ const KANSETSU_WAZA = [
         name: "Ashi-gatame",
         nameDE: "Beinhebel / Leg Lock",
         kategorie: "Kansetsu-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/BWWb0GoAtZw", // Kodokan Official (Ashi-garami - verwandt)
 
         beschreibung: {
             position: "Allgemeiner Begriff für Beinhebel - ähnlich Hiza-gatame aber kann auch Knöchel/Fuß betreffen.",
@@ -1682,7 +1682,7 @@ const KANSETSU_WAZA = [
         name: "Hara-gatame",
         nameDE: "Bauchhebel / Stomach Armlock",
         kategorie: "Kansetsu-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/ZzEycg8R_9M", // Kodokan Official (Ude-hishigi-hara-gatame)
 
         beschreibung: {
             position: "Gegners gestreckter Arm wird über deinen Bauch/Hüfte gehebelt, du liegst oft auf Rücken oder Seite.",

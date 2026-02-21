@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Debug Click Test</title>
+    <style>
+        .technique-item {
+            padding: 15px;
+            margin: 10px;
+            background: #f0f0f0;
+            cursor: pointer;
+            border: 2px solid #ccc;
+        }
+        .technique-item:hover {
+            background: #e0e0e0;
+        }
+        #result {
+            padding: 20px;
+            margin: 20px;
+            background: #fff;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Debug: Katame-Waza Click Test</h1>
+
+    <h2>Test Katame-Waza</h2>
+    <div class="technique-item" data-id="kesa-gatame">
+        <span class="technique-name">Kesa-gatame</span>
+        <span class="status-icon">−</span>
+    </div>
+
+    <div class="technique-item" data-id="juji-gatame">
+        <span class="technique-name">Juji-gatame</span>
+        <span class="status-icon">−</span>
+    </div>
+
+    <div class="technique-item" data-id="hadaka-jime">
+        <span class="technique-name">Hadaka-jime</span>
+        <span class="status-icon">−</span>
+    </div>
+
+    <h2>Test Nage-Waza (zum Vergleich)</h2>
+    <div class="technique-item" data-id="de-ashi-barai">
+        <span class="technique-name">De-ashi-barai</span>
+        <span class="status-icon">−</span>
+    </div>
+
+    <div id="result"></div>
+
+    <!-- Load databases -->
+    <script src="techniken-data.js"></script>
+    <script src="kansetsu-data.js"></script>
+    <script src="shime-data.js"></script>
+    <script src="nage-data.js"></script>
+
+    <script>
+        // Check databases loaded
+        console.log('=== DATABASES LOADED ===');
+        console.log('OSAEKOMI_WAZA:', typeof OSAEKOMI_WAZA !== 'undefined' ? `✅ ${OSAEKOMI_WAZA.length} items` : '❌ NOT LOADED');
+        console.log('KANSETSU_WAZA:', typeof KANSETSU_WAZA !== 'undefined' ? `✅ ${KANSETSU_WAZA.length} items` : '❌ NOT LOADED');
+        console.log('SHIME_WAZA:', typeof SHIME_WAZA !== 'undefined' ? `✅ ${SHIME_WAZA.length} items` : '❌ NOT LOADED');
+        console.log('NAGE_WAZA:', typeof NAGE_WAZA !== 'undefined' ? `✅ ${NAGE_WAZA.length} items` : '❌ NOT LOADED');
+
+        // Simplified showTechniqueDetail
+        function showTechniqueDetail(techniqueId) {
+            console.log('=== showTechniqueDetail called with:', techniqueId);
+
+            let technique = null;
+
+            // Suche in Osaekomi-waza
+            if (typeof OSAEKOMI_WAZA !== 'undefined') {
+                technique = OSAEKOMI_WAZA.find(t => t.id === techniqueId);
+                if (technique) console.log('✅ Found in OSAEKOMI_WAZA');
+            }
+
+            // Suche in Kansetsu-waza
+            if (!technique && typeof KANSETSU_WAZA !== 'undefined') {
+                technique = KANSETSU_WAZA.find(t => t.id === techniqueId);
+                if (technique) console.log('✅ Found in KANSETSU_WAZA');
+            }
+
+            // Suche in Shime-waza
+            if (!technique && typeof SHIME_WAZA !== 'undefined') {
+                technique = SHIME_WAZA.find(t => t.id === techniqueId);
+                if (technique) console.log('✅ Found in SHIME_WAZA');
+            }
+
+            // Suche in Nage-waza
+            if (!technique && typeof NAGE_WAZA !== 'undefined') {
+                technique = NAGE_WAZA.find(t => t.id === techniqueId);
+                if (technique) console.log('✅ Found in NAGE_WAZA');
+            }
+
+            const result = document.getElementById('result');
+
+            if (!technique) {
+                console.log('❌ Technik nicht gefunden:', techniqueId);
+                result.innerHTML = `<h2>❌ NICHT GEFUNDEN: ${techniqueId}</h2>`;
+                return;
+            }
+
+            console.log('✅ Technique found:', technique);
+            result.innerHTML = `
+                <h2>✅ GEFUNDEN: ${technique.name}</h2>
+                <p><strong>ID:</strong> ${technique.id}</p>
+                <p><strong>Name DE:</strong> ${technique.nameDE}</p>
+                <p><strong>Kategorie:</strong> ${technique.kategorie}</p>
+                <p><strong>Video URL:</strong> ${technique.videoUrl || 'Kein Video'}</p>
+                <pre>${JSON.stringify(technique, null, 2)}</pre>
+            `;
+        }
+
+        // Click handler
+        document.addEventListener('click', function(e) {
+            const techniqueItem = e.target.closest('.technique-item');
+            if (techniqueItem) {
+                const techniqueId = techniqueItem.getAttribute('data-id');
+                console.log('=== CLICK on:', techniqueId);
+                showTechniqueDetail(techniqueId);
+            }
+        });
+    </script>
+</body>
+</html>

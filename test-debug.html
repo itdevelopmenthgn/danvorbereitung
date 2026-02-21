@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Test</title>
+</head>
+<body>
+    <h1>Datenbank-Test</h1>
+    <div id="output"></div>
+
+    <script src="techniken-data.js"></script>
+    <script src="kansetsu-data.js"></script>
+    <script src="shime-data.js"></script>
+    <script>
+        const output = document.getElementById('output');
+        let html = '<h2>Geladene Datenbanken:</h2>';
+
+        if (typeof OSAEKOMI_WAZA !== 'undefined') {
+            html += '<p>✅ OSAEKOMI_WAZA: ' + OSAEKOMI_WAZA.length + ' Techniken</p>';
+            html += '<p>Erste Technik: ' + OSAEKOMI_WAZA[0].name + '</p>';
+            html += '<p>Video URL: ' + OSAEKOMI_WAZA[0].videoUrl + '</p>';
+        } else {
+            html += '<p>❌ OSAEKOMI_WAZA nicht geladen</p>';
+        }
+
+        if (typeof KANSETSU_WAZA !== 'undefined') {
+            html += '<p>✅ KANSETSU_WAZA: ' + KANSETSU_WAZA.length + ' Techniken</p>';
+            html += '<p>Erste Technik: ' + KANSETSU_WAZA[0].name + '</p>';
+            html += '<p>Video URL: ' + KANSETSU_WAZA[0].videoUrl + '</p>';
+        } else {
+            html += '<p>❌ KANSETSU_WAZA nicht geladen</p>';
+        }
+
+        if (typeof SHIME_WAZA !== 'undefined') {
+            html += '<p>✅ SHIME_WAZA: ' + SHIME_WAZA.length + ' Techniken</p>';
+            html += '<p>Erste Technik: ' + SHIME_WAZA[0].name + '</p>';
+            html += '<p>Video URL: ' + SHIME_WAZA[0].videoUrl + '</p>';
+        } else {
+            html += '<p>❌ SHIME_WAZA nicht geladen</p>';
+        }
+
+        output.innerHTML = html;
+    </script>
+</body>
+</html>

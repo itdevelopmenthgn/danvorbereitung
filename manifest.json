@@ -1,0 +1,27 @@
+{
+  "name": "Judo 1. Dan Vorbereitung",
+  "short_name": "Judo Dan",
+  "description": "Komplette Vorbereitung für die Judo 1. Dan Prüfung mit allen Techniken, Kata und Trainingsmaterialien",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#667eea",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["sports", "education"],
+  "lang": "de-DE",
+  "dir": "ltr"
+}

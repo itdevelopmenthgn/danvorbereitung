@@ -7,7 +7,7 @@ const SHIME_WAZA = [
         name: "Hadaka-jime",
         nameDE: "Nackter Würger / Rear Naked Choke",
         kategorie: "Shime-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/9f0n8jez7iA", // Kodokan Official
 
         beschreibung: {
             position: "Du bist hinter dem Gegner (Back Control), dein Arm umschließt seinen Hals ohne Gi-Griffe.",
@@ -289,7 +289,7 @@ const SHIME_WAZA = [
         name: "Okuri-eri-jime",
         nameDE: "Sliding Lapel Choke / Schiebekragenwürger",
         kategorie: "Shime-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/EiqyoVcIAi8", // Kodokan Official
 
         beschreibung: {
             position: "Von hinten, eine Hand greift tief in Gegners Kragen, andere Hand zieht anderen Kragen - Kreuz-Würge von hinten.",
@@ -322,9 +322,7 @@ const SHIME_WAZA = [
             "❌ Hand nicht tief genug im Kragen → Würge funktioniert nicht",
             "❌ Daumen außen statt innen → Schwach und ineffektiv",
             "❌ Nicht kreuzgreifen → Kein Druck",
-            "❌ Zu viel ziehen, zu wenig Scherenbewe
-
-gung → Kraftverschwendung",
+            "❌ Zu viel ziehen, zu wenig Scherenbewegung → Kraftverschwendung",
             "❌ Hooks verloren → Gegner escaped bevor Würge wirkt",
             "❌ Falsche Hand tief (sollte meist die untere sein)"
         ],
@@ -557,7 +555,7 @@ gung → Kraftverschwendung",
         name: "Gyaku-juji-jime",
         nameDE: "Umgekehrter Kreuzwürger / Reverse Cross Choke",
         kategorie: "Shime-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/t3tQriIPdlI", // Kodokan Official
 
         beschreibung: {
             position: "Von oben, beide Hände greifen Kragen gekreuzt, Daumen AUSSEN - daher 'umgekehrt'.",
@@ -796,7 +794,7 @@ gung → Kraftverschwendung",
         name: "Kata-ha-jime",
         nameDE: "Einschulter-Würger / Single Wing Choke",
         kategorie: "Shime-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/yaTGgRjnwB8", // Kodokan Official (Kataha-jime)
 
         beschreibung: {
             position: "Von hinten/seitlich, eine Hand greift Kragen, anderer Arm geht unter Achsel - asymmetrische Würge.",
@@ -1022,7 +1020,7 @@ gung → Kraftverschwendung",
         name: "Sode-guruma-jime",
         nameDE: "Ärmelrad-Würger / Sleeve Wheel Choke",
         kategorie: "Shime-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/E3nvQzClcAU", // Kodokan Official
 
         beschreibung: {
             position: "Von vorne oder Seite, beide Hände greifen Gegners Ärmel, Unterarme würgen seitlich am Hals - wie ein Rad.",
@@ -1275,7 +1273,7 @@ gung → Kraftverschwendung",
         name: "Sankaku-jime",
         nameDE: "Dreieck-Würger / Triangle Choke",
         kategorie: "Shime-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/lq1CUBRAm7s", // Kodokan Official
 
         beschreibung: {
             position: "Deine Beine bilden Dreieck um Gegners Hals und einen Arm - würgen mit Beinen und eigenem Arm.",
@@ -1562,7 +1560,7 @@ gung → Kraftverschwendung",
         name: "Tsukkomi-jime",
         nameDE: "Stoß-Würger / Thrust Choke",
         kategorie: "Shime-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/dKKpnD3eLcY", // Kodokan Official
 
         beschreibung: {
             position: "Von oben, eine oder beide Hände stoßen/drücken Kragen tief in Gegners Hals - direkter Druck.",
@@ -1825,7 +1823,7 @@ gung → Kraftverschwendung",
         name: "Koshi-jime",
         nameDE: "Hüft-Würger / Hip Choke",
         kategorie: "Shime-waza",
-        videoUrl: "",
+        videoUrl: "https://youtu.be/D_0fFcoIbvY", // Kodokan Official (Do-jime - verwandt)
 
         beschreibung: {
             position: "Deine Hüfte drückt gegen Gegners Hals während Kragen-Griffe würgen - Kombination aus Kragen und Hüft-Druck.",

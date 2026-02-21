@@ -1,0 +1,2926 @@
+// Datenbank für alle Nage-Waza (Wurftechniken)
+// Gokyo-no-waza: 40 Techniken in 5 Gruppen (je 8 Techniken)
+
+// Dai-ikkyo (Erste Gruppe) - 8 Techniken
+const DAI_IKKYO = [
+    {
+        id: "de-ashi-barai",
+        name: "De-ashi-barai",
+        nameDE: "Fußfeger vorwärts",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-ikkyo (1. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "https://youtu.be/Uy5ZMus1wNQ?t=45", // Neil Adams Gokyo Demo
+
+        beschreibung: {
+            grundprinzip: "Fege den vorwärts bewegenden Fuß des Gegners weg, wenn er sein Gewicht darauf verlagert.",
+            timing: "Genau im Moment, wenn Gegner Gewicht auf den vorderen Fuß bringt und der Fuß gerade den Boden berührt",
+            richtung: "Diagonal vorwärts in Gegners Bewegungsrichtung",
+            kuzushi: "Vorwärts-diagonal, ziehe wenn Gegner vorwärts tritt",
+            tsukuri: "Dein Fegefoot bewegt sich in flacher Sichelbewegung gegen seinen Knöchel",
+            kake: "Fege seinen vorderen Fuß weg während du mit den Händen ziehst"
+        },
+
+        schlüsselpunkte: [
+            "Timing ist ALLES - zu früh oder zu spät = funktioniert nicht",
+            "Flache Fegebewegung mit der Fußsohle",
+            "Treffe seinen Fuß am Knöchel/Fußgelenk",
+            "Hände und Fuß arbeiten zusammen (ziehen + fegen)",
+            "Gegner muss sich vorwärts bewegen",
+            "Sehr leichte, technische Technik - keine Kraft nötig"
+        ],
+
+        fehler: [
+            "❌ Zu früh fegen → Gegner hat Gewicht noch nicht verlagert",
+            "❌ Zu spät fegen → Fuß schon fest auf Boden",
+            "❌ Zu hoch fegen → Triffst Schienbein statt Knöchel",
+            "❌ Treten statt Fegen → Ineffektiv und kann wehtun",
+            "❌ Nur mit Fuß arbeiten ohne Hände → Kein Kuzushi",
+            "❌ Gegen stehenden Gegner versuchen → Funktioniert nicht"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Fege-Bewegung",
+                    beschreibung: "Übe die flache Sichelbewegung mit dem Fuß, ohne Partner",
+                    dauer: "10 Min täglich",
+                    wiederholungen: "100x pro Seite",
+                    fokus: "Flache Bewegung, Fußgelenk flexibel"
+                },
+                {
+                    übung: "Timing-Visualisierung",
+                    beschreibung: "Stelle dir vor: Gegner tritt vor, du fegst genau beim Aufsetzen",
+                    dauer: "5 Min",
+                    wiederholungen: "Täglich",
+                    fokus: "Timing-Gefühl entwickeln"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Statisches Timing (Woche 1-2)",
+                    beschreibung: "Partner macht langsamen Schritt, du fegst beim Aufsetzen",
+                    intensität: "Partner passiv, sehr langsam",
+                    wiederholungen: 50
+                },
+                {
+                    phase: "Bewegtes Uchi-komi (Woche 3-6)",
+                    beschreibung: "Partner geht normal, du übst nur Eingang (ohne Wurf)",
+                    intensität: "Normale Geschwindigkeit",
+                    wiederholungen: 100
+                },
+                {
+                    phase: "Nage-komi (Woche 7-12)",
+                    beschreibung: "Werfen mit weichem Fallen",
+                    intensität: "Partner 30% Widerstand",
+                    wiederholungen: 30
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 3,
+            anforderungen: [
+                "Aus freier Bewegung (nicht statisch!)",
+                "Richtiges Timing zeigen",
+                "Flache Fegebewegung sichtbar",
+                "Kuzushi deutlich erkennbar",
+                "Sauberer Wurf"
+            ]
+        }
+    },
+
+    {
+        id: "hiza-guruma",
+        name: "Hiza-guruma",
+        nameDE: "Knierad",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-ikkyo (1. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "https://youtu.be/Uy5ZMus1wNQ?t=95",
+
+        beschreibung: {
+            grundprinzip: "Blockiere Gegners Knie mit deinem Fußsohle und drehe ihn wie ein Rad über diesen Punkt.",
+            timing: "Wenn Gegner sein Gewicht auf ein Bein verlagert",
+            richtung: "Seitlich-vorwärts, Gegner dreht sich um sein blockiertes Knie",
+            kuzushi: "Diagonal vorwärts zur Seite des blockierten Beins",
+            tsukuri: "Deine Fußsohle an sein Knie (außen), Körper dreht",
+            kake: "Ziehe mit Händen im Kreis während Knie blockiert bleibt"
+        },
+
+        schlüsselpunkte: [
+            "Fußsohle AN Knie, nicht dagegen treten",
+            "Knie wird nur blockiert, nicht geschlagen",
+            "Hände ziehen im Kreis (wie Lenkrad drehen)",
+            "Gegner rollt über sein blockiertes Knie",
+            "Dein Körper dreht sich mit den Händen",
+            "Leichte, kreisende Technik"
+        ],
+
+        fehler: [
+            "❌ Ins Knie treten → Gefährlich und verboten!",
+            "❌ Zu viel Kraft → Technik ist zirkulär, nicht linear",
+            "❌ Fuß zu tief (Wade statt Knie) → Kein Rad-Effekt",
+            "❌ Nur schieben ohne Drehung → Funktioniert nicht",
+            "❌ Falsche Knie-Seite blockieren → Gegner kann ausweichen"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Kreis-Bewegung mit Armen",
+                    beschreibung: "Übe die kreisende Zieh-Bewegung mit imaginärem Gegner",
+                    dauer: "10 Min",
+                    wiederholungen: "50x pro Seite",
+                    fokus: "Fließende Kreisbewegung"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-4)",
+                    beschreibung: "Wiederholtes Ansetzen ohne Wurf",
+                    intensität: "Partner passiv",
+                    wiederholungen: 100
+                },
+                {
+                    phase: "Nage-komi (Woche 5-10)",
+                    beschreibung: "Werfen üben",
+                    intensität: "Partner 20%",
+                    wiederholungen: 40
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 3,
+            anforderungen: [
+                "Saubere Rad-Bewegung zeigen",
+                "Fuß an Knie (nicht treten!)",
+                "Kreisförmige Hand-Bewegung",
+                "Aus Bewegung werfen"
+            ]
+        }
+    },
+
+    {
+        id: "sasae-tsurikomi-ashi",
+        name: "Sasae-tsurikomi-ashi",
+        nameDE: "Hebezug-Fuß-Stütz",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-ikkyo (1. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "https://youtu.be/Uy5ZMus1wNQ?t=145",
+
+        beschreibung: {
+            grundprinzip: "Blockiere Gegners vorderen Fuß mit deiner Fußsohle und hebe/ziehe ihn darüber.",
+            timing: "Wenn Gegner vorwärts tritt oder sein Gewicht vorne hat",
+            richtung: "Vorwärts über den blockierten Fuß",
+            kuzushi: "Hoch-vorwärts (daher 'Tsuri-komi' = hochziehen)",
+            tsukuri: "Fußsohle blockiert seinen Fußknöchel von außen",
+            kake: "Ziehe hoch und vorwärts während Fuß blockiert"
+        },
+
+        schlüsselpunkte: [
+            "Tsurikomi = Hochziehen ist wichtig!",
+            "Fußsohle blockiert Fußgelenk/Knöchel",
+            "Eine Hand zieht hoch (Tsurikomi-Bewegung)",
+            "Gegner fällt vorwärts über blockierten Fuß",
+            "Timing ähnlich wie De-ashi-barai",
+            "Blockieren, nicht fegen!"
+        ],
+
+        fehler: [
+            "❌ Nicht hochziehen → Würde zu De-ashi-barai",
+            "❌ Zu fest blockieren → Gegner stoppt statt zu fallen",
+            "❌ Fuß zu hoch → Trifft Schienbein, ineffektiv",
+            "❌ Nur blockieren ohne Ziehen → Gegner steht",
+            "❌ Falsche Timing → Fuß nicht belastet"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Tsurikomi-Bewegung",
+                    beschreibung: "Übe die Hochzieh-Bewegung mit beiden Armen",
+                    dauer: "10 Min",
+                    wiederholungen: "60x",
+                    fokus: "Gefühl für 'hochziehen' entwickeln"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-5)",
+                    beschreibung: "Eingang üben",
+                    intensität: "Partner passiv",
+                    wiederholungen: 80
+                },
+                {
+                    phase: "Nage-komi (Woche 6-12)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 30%",
+                    wiederholungen: 35
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 3,
+            anforderungen: [
+                "Tsurikomi (Hochziehen) deutlich zeigen",
+                "Fußblockade sichtbar",
+                "Aus Bewegung",
+                "Guter Kuzushi"
+            ]
+        }
+    },
+
+    {
+        id: "uki-goshi",
+        name: "Uki-goshi",
+        nameDE: "Schwebende Hüfte",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-ikkyo (1. Gruppe)",
+        wazaTyp: "Koshi-waza (Hüftwurf)",
+        videoUrl: "https://youtu.be/Uy5ZMus1wNQ?t=195",
+
+        beschreibung: {
+            grundprinzip: "Ziehe Gegner auf deine seitlich platzierte Hüfte und wirf ihn darüber.",
+            timing: "Wenn Gegner vorwärts kommt oder gezogen werden kann",
+            richtung: "Vorwärts über deine Hüfte",
+            kuzushi: "Vorwärts auf deine Hüfte",
+            tsukuri: "Drehe ein, Hüfte seitlich an seinem Bauch, Arm um Taille",
+            kake: "Beuge dich vor und hebe mit Hüfte + ziehe mit Armen"
+        },
+
+        schlüsselpunkte: [
+            "Uki = schwebend - hohe, leichte Hüftposition",
+            "Nicht tief wie O-goshi - höher!",
+            "Arm um Taille/Rücken des Gegners",
+            "Hüfte kommt seitlich an Gegners Bauch",
+            "Leichte, fließende Bewegung",
+            "Guter Einstieg für Hüftwurf-Anfänger"
+        ],
+
+        fehler: [
+            "❌ Zu tief eindrehen → Wird zu O-goshi",
+            "❌ Keine Hüfte am Gegner → Kein Drehpunkt",
+            "❌ Nicht vorwärts ziehen → Kein Kuzushi",
+            "❌ Zu viel Kraft → Technik ist fließend",
+            "❌ Falscher Arm-Einsatz → Arm muss um Taille"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Eindreh-Bewegung",
+                    beschreibung: "Übe die Drehbewegung ohne Partner",
+                    dauer: "10 Min",
+                    wiederholungen: "50x beide Seiten",
+                    fokus: "Flüssige Drehung, Hüfte bleibt hoch"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-4)",
+                    beschreibung: "Eindrehen üben",
+                    intensität: "Partner passiv",
+                    wiederholungen: 100
+                },
+                {
+                    phase: "Nage-komi (Woche 5-10)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 25%",
+                    wiederholungen: 40
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 3,
+            anforderungen: [
+                "Hüfte hoch (nicht tief wie O-goshi)",
+                "Arm um Taille zeigen",
+                "Fließende Bewegung",
+                "Sauberer Wurf"
+            ]
+        }
+    },
+
+    {
+        id: "o-soto-gari",
+        name: "O-soto-gari",
+        nameDE: "Große Außensichel",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-ikkyo (1. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "https://youtu.be/Uy5ZMus1wNQ?t=245",
+
+        beschreibung: {
+            grundprinzip: "Sense das äußere Bein des Gegners von hinten weg während du ihn rückwärts wirfst.",
+            timing: "Wenn Gegner Gewicht auf hinterem/äußerem Bein hat",
+            richtung: "Rückwärts über sein äußeres Bein",
+            kuzushi: "Rückwärts-diagonal zum äußeren Bein",
+            tsukuri: "Schritt tief hinter sein Bein, dein Oberkörper über ihm",
+            kake: "Sense sein Bein weg mit deinem ganzen Bein, drücke mit Oberkörper"
+        },
+
+        schlüsselpunkte: [
+            "O = groß, kraftvoller Wurf",
+            "Ganzes Bein senst (nicht nur Fuß)",
+            "Oberkörper aktiv - drückt Gegner zurück",
+            "Tief hinter sein Bein schreiten",
+            "Kopf geht zu seiner Schulter (Nähe)",
+            "Dynamischer, kraftvoller Wurf"
+        ],
+
+        fehler: [
+            "❌ Nur Fuß benutzen → Nicht genug Kraft",
+            "❌ Oberkörper nicht über Gegner → Fällt nicht",
+            "❌ Nicht tief genug hinter Bein → Kann ausweichen",
+            "❌ Zu aufrecht bleiben → Kein Druck",
+            "❌ Falsches Bein attackieren → Gegner stabil"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Sens-Bewegung",
+                    beschreibung: "Übe die Bein-Sens-Bewegung",
+                    dauer: "10 Min",
+                    wiederholungen: "60x pro Seite",
+                    fokus: "Ganzes Bein aktiv, nicht nur Fuß"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-3)",
+                    beschreibung: "Eingang üben ohne Wurf",
+                    intensität: "Partner passiv",
+                    wiederholungen: 80
+                },
+                {
+                    phase: "Nage-komi (Woche 4-10)",
+                    beschreibung: "Werfen mit Crash-Pad",
+                    intensität: "Partner 30%",
+                    wiederholungen: 35
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 2,
+            anforderungen: [
+                "Ganzes Bein senst",
+                "Oberkörper aktiv über Gegner",
+                "Tiefer Schritt",
+                "Kraftvoller, sauberer Wurf"
+            ]
+        }
+    },
+
+    {
+        id: "o-goshi",
+        name: "O-goshi",
+        nameDE: "Große Hüfte",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-ikkyo (1. Gruppe)",
+        wazaTyp: "Koshi-waza (Hüftwurf)",
+        videoUrl: "https://youtu.be/Uy5ZMus1wNQ?t=295",
+
+        beschreibung: {
+            grundprinzip: "Lade Gegner auf deine tief eingedrehte Hüfte und wirf ihn darüber.",
+            timing: "Wenn Gegner vorwärts bewegt werden kann",
+            richtung: "Vorwärts über deine Hüfte",
+            kuzushi: "Vorwärts, ziehe auf deine Hüfte",
+            tsukuri: "Drehe tief ein, Hüfte tiefer als Gegners Hüfte, Arm um Taille",
+            kake: "Beuge vor, hebe mit Hüfte, Gegner rollt über deinen Rücken"
+        },
+
+        schlüsselpunkte: [
+            "O = groß - kraftvoller Hüftwurf",
+            "Tief eindrehen - Hüfte UNTER Gegners Hüfte",
+            "Arm fest um Taille",
+            "Beide Hüften eng aneinander",
+            "Klassischer, grundlegender Hüftwurf",
+            "Einer der ersten Würfe die man lernt"
+        ],
+
+        fehler: [
+            "❌ Nicht tief genug → Gegner nicht auf Hüfte",
+            "❌ Hüfte zu weit weg → Kein Kontakt",
+            "❌ Arm zu locker → Verliert Kontrolle",
+            "❌ Nicht weit genug eindrehen → Schlechter Winkel",
+            "❌ Beine zu steif → Kann nicht heben"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Tiefes Eindrehen",
+                    beschreibung: "Übe tiefe Drehung mit Hüfte runter",
+                    dauer: "10 Min",
+                    wiederholungen: "50x beide Seiten",
+                    fokus: "Hüfte tief, Balance halten"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-4)",
+                    beschreibung: "Eindrehen ohne Wurf",
+                    intensität: "Partner passiv",
+                    wiederholungen: 120
+                },
+                {
+                    phase: "Nage-komi (Woche 5-12)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 30%",
+                    wiederholungen: 50
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 2,
+            anforderungen: [
+                "Tiefe Hüftposition",
+                "Enger Hüft-Kontakt",
+                "Arm um Taille",
+                "Kraftvoller Wurf"
+            ]
+        }
+    },
+
+    {
+        id: "o-uchi-gari",
+        name: "O-uchi-gari",
+        nameDE: "Große Innensichel",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-ikkyo (1. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "https://youtu.be/Uy5ZMus1wNQ?t=345",
+
+        beschreibung: {
+            grundprinzip: "Sense das innere Bein des Gegners von innen weg während du ihn rückwärts wirfst.",
+            timing: "Wenn Gegner Gewicht auf einem Bein hat",
+            richtung: "Rückwärts über sein inneres Bein",
+            kuzushi: "Rückwärts zum Standbein",
+            tsukuri: "Schritt zwischen seine Beine, dein Bein senst von innen",
+            kake: "Sense mit ganzer Bein-Rückseite, drücke mit Oberkörper"
+        },
+
+        schlüsselpunkte: [
+            "Von INNEN zwischen Gegners Beinen",
+            "Unterschied zu O-soto: innen statt außen",
+            "Wade/Rückseite deines Beins senst",
+            "Tief einschreiten zwischen Beine",
+            "Oberkörper drückt aktiv",
+            "Sehr effektiver Wurf im Wettkampf"
+        ],
+
+        fehler: [
+            "❌ Nicht tief genug → Bein nicht erwischt",
+            "❌ Falsches Bein attackiert → Gegner stabil",
+            "❌ Oberkörper fehlt → Nur Bein reicht nicht",
+            "❌ Zu weit außen → Wird zu O-soto",
+            "❌ Kein Kuzushi → Gegner steht stabil"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Innen-Sens-Bewegung",
+                    beschreibung: "Übe Bein von innen zu sensen",
+                    dauer: "10 Min",
+                    wiederholungen: "60x pro Seite",
+                    fokus: "Wade aktiv, tiefes Einschreiten"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-4)",
+                    beschreibung: "Eingang üben",
+                    intensität: "Partner passiv",
+                    wiederholungen: 90
+                },
+                {
+                    phase: "Nage-komi (Woche 5-12)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 35%",
+                    wiederholungen: 40
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 2,
+            anforderungen: [
+                "Von innen attackieren (nicht außen!)",
+                "Tiefes Einschreiten",
+                "Ganzes Bein senst",
+                "Oberkörper aktiv"
+            ]
+        }
+    },
+
+    {
+        id: "seoi-nage",
+        name: "Seoi-nage",
+        nameDE: "Schulterwurf",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-ikkyo (1. Gruppe)",
+        wazaTyp: "Te-waza (Handtechnik)",
+        videoUrl: "https://youtu.be/Uy5ZMus1wNQ?t=395",
+
+        beschreibung: {
+            grundprinzip: "Lade Gegner auf deinen Rücken/Schulter und wirf ihn darüber.",
+            timing: "Wenn Gegner vorwärts kommt",
+            richtung: "Vorwärts über deine Schulter",
+            kuzushi: "Vorwärts-hoch, ziehe auf deinen Rücken",
+            tsukuri: "Drehe tief ein, Gegner auf Rücken laden, Arm unter seiner Achsel",
+            kake: "Beuge vor, ziehe über Schulter, drehe"
+        },
+
+        schlüsselpunkte: [
+            "Seoi = Schulter/Rücken tragen",
+            "Einer der beliebtesten Würfe im Judo",
+            "Schnelle, explosive Technik",
+            "Gegner wird auf Rücken geladen",
+            "Tiefes Eindrehen wichtig",
+            "Viele Varianten (Ippon-seoi, Morote-seoi, etc.)"
+        ],
+
+        fehler: [
+            "❌ Nicht tief genug → Gegner nicht auf Rücken",
+            "❌ Zu langsam → Gegner kann verteidigen",
+            "❌ Kein Kontakt → Lücke zwischen euch",
+            "❌ Schlechter Arm-Griff → Verliert Kontrolle",
+            "❌ Beine zu steif → Keine Dynamik"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Seoi-Eindrehen",
+                    beschreibung: "Übe schnelles, tiefes Eindrehen",
+                    dauer: "15 Min täglich",
+                    wiederholungen: "100x pro Seite",
+                    fokus: "Geschwindigkeit, Tiefe, Balance"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-6)",
+                    beschreibung: "Massenwiederholungen des Eingangs",
+                    intensität: "Partner passiv",
+                    wiederholungen: 200
+                },
+                {
+                    phase: "Nage-komi (Woche 7-16)",
+                    beschreibung: "Werfen mit hohem Volumen",
+                    intensität: "Partner 25%",
+                    wiederholungen: 60
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 2,
+            anforderungen: [
+                "Tiefe Eindreh-Position",
+                "Gegner auf Rücken geladen",
+                "Schnelle Ausführung",
+                "Sauberer, kontrollierter Wurf"
+            ]
+        }
+    }
+];
+
+// Dai-nikyo (Zweite Gruppe) - 8 Techniken
+const DAI_NIKYO = [
+    {
+        id: "ko-soto-gari",
+        name: "Ko-soto-gari",
+        nameDE: "Kleine Außensichel",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-nikyo (2. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "https://youtu.be/Uy5ZMus1wNQ?t=445",
+
+        beschreibung: {
+            grundprinzip: "Sense das äußere Bein des Gegners von hinten weg - kleinere, technischere Version von O-soto-gari.",
+            timing: "Wenn Gegner Gewicht rückwärts verlagert",
+            richtung: "Rückwärts-diagonal",
+            kuzushi: "Rückwärts zur Ferse",
+            tsukuri: "Dein Fuß hakt seine Ferse von hinten",
+            kake: "Sense Ferse weg während du drückst"
+        },
+
+        schlüsselpunkte: [
+            "Ko = klein - technischer als O-soto",
+            "Nur Fuß/Ferse attackieren (nicht ganzes Bein)",
+            "Präzises Timing wichtiger als Kraft",
+            "Gegner fällt eher diagonal als direkt zurück",
+            "Kann schnell kombiniert werden",
+            "Sehr effektiv als Konter"
+        ],
+
+        fehler: [
+            "❌ Zu viel Kraft → Technik ist technisch, nicht kraftvoll",
+            "❌ Falscher Winkel → Muss diagonal sein",
+            "❌ Zu hoch attackieren → Ferse, nicht Wade!",
+            "❌ Oberkörper zu weit vorne → Balance verlieren",
+            "❌ Schlechter Kuzushi → Gegner stabil"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Fersen-Hak-Bewegung",
+                    beschreibung: "Übe präzises Haken der Ferse",
+                    dauer: "10 Min",
+                    wiederholungen: "70x pro Seite",
+                    fokus: "Präzision, nicht Kraft"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-5)",
+                    beschreibung: "Eingang mit Timing üben",
+                    intensität: "Partner passiv",
+                    wiederholungen: 100
+                },
+                {
+                    phase: "Nage-komi (Woche 6-12)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 30%",
+                    wiederholungen: 40
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 3,
+            anforderungen: [
+                "Technische Ausführung (nicht Kraft)",
+                "Präzises Fersen-Attackieren",
+                "Diagonale Richtung",
+                "Gutes Timing"
+            ]
+        }
+    },
+
+    {
+        id: "ko-uchi-gari",
+        name: "Ko-uchi-gari",
+        nameDE: "Kleine Innensichel",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-nikyo (2. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Sense das innere Bein des Gegners von innen - kleinere, technischere Version von O-uchi-gari.",
+            timing: "Wenn Gegner zurückweicht oder Gewicht auf einem Bein",
+            richtung: "Rückwärts-diagonal",
+            kuzushi: "Rückwärts zur Ferse des Standbeins",
+            tsukuri: "Dein Fuß senst seine Ferse von innen",
+            kake: "Kleine Sens-Bewegung + Handaktion"
+        },
+
+        schlüsselpunkte: [
+            "Ko = klein - subtiler als O-uchi",
+            "Nur Ferse attackieren",
+            "Sehr schnelle, kurze Bewegung",
+            "Ideal für Kombinationen",
+            "Kann als Täuschung eingesetzt werden",
+            "Hände sehr wichtig für Kuzushi"
+        ],
+
+        fehler: [
+            "❌ Zu großer Schritt → Wird zu O-uchi",
+            "❌ Zu viel Beineinsatz → Balance verlieren",
+            "❌ Hände vergessen → Kein Kuzushi",
+            "❌ Falsches Timing → Gegner stabil",
+            "❌ Zu tief attackieren → Ineffektiv"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Schnelle Fersen-Sens",
+                    beschreibung: "Kurze, schnelle Sensbewegung",
+                    dauer: "10 Min",
+                    wiederholungen: "80x pro Seite",
+                    fokus: "Geschwindigkeit + Präzision"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-4)",
+                    beschreibung: "Schnelles Ansetzen",
+                    intensität: "Partner passiv",
+                    wiederholungen: 120
+                },
+                {
+                    phase: "Kombinationen (Woche 5-10)",
+                    beschreibung: "Ko-uchi als Setup üben",
+                    intensität: "Partner 40%",
+                    wiederholungen: 50
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 3,
+            anforderungen: [
+                "Kleine, technische Ausführung",
+                "Schnelle Bewegung",
+                "Gute Handaktion",
+                "Kann in Kombination gezeigt werden"
+            ]
+        }
+    },
+
+    {
+        id: "koshi-guruma",
+        name: "Koshi-guruma",
+        nameDE: "Hüftrad",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-nikyo (2. Gruppe)",
+        wazaTyp: "Koshi-waza (Hüftwurf)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Drehe Gegner über deine Hüfte wie ein Rad, Arm um seinen Hals/Kopf.",
+            timing: "Wenn Gegner vorwärts bewegt werden kann",
+            richtung: "Vorwärts über Hüfte im Kreis",
+            kuzushi: "Vorwärts-hoch",
+            tsukuri: "Arm um Hals/Kopf, Hüfte an Gegner",
+            kake: "Drehe wie Rad über Hüfte"
+        },
+
+        schlüsselpunkte: [
+            "Guruma = Rad - kreisende Bewegung",
+            "Arm um Hals (NICHT würgen!)",
+            "Kopfkontrolle wichtig",
+            "Ähnlich O-goshi aber mit Kopfkontrolle",
+            "Kreisende, rotierende Bewegung",
+            "Sehr kraftvoller Wurf"
+        ],
+
+        fehler: [
+            "❌ Würgen → Verboten! Nur Kontrolle",
+            "❌ Zu linear → Muss kreisen",
+            "❌ Kein Hüftkontakt → Ineffektiv",
+            "❌ Arm zu locker → Verliert Kontrolle",
+            "❌ Nicht tief genug → Gegner nicht geladen"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Rad-Bewegung",
+                    beschreibung: "Übe kreisende Wurf-Bewegung",
+                    dauer: "10 Min",
+                    wiederholungen: "50x beide Seiten",
+                    fokus: "Kreisbewegung, nicht linear"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-5)",
+                    beschreibung: "Eindrehen mit Kopfkontrolle",
+                    intensität: "Partner passiv",
+                    wiederholungen: 80
+                },
+                {
+                    phase: "Nage-komi (Woche 6-12)",
+                    beschreibung: "Werfen (VORSICHT mit Hals!)",
+                    intensität: "Partner 25%",
+                    wiederholungen: 35
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 3,
+            anforderungen: [
+                "Kreisende Rad-Bewegung",
+                "Sichere Kopf/Hals-Kontrolle",
+                "Kein Würgen",
+                "Kraftvoller Wurf"
+            ]
+        }
+    },
+
+    {
+        id: "tsurikomi-goshi",
+        name: "Tsurikomi-goshi",
+        nameDE: "Hebezug-Hüfte",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-nikyo (2. Gruppe)",
+        wazaTyp: "Koshi-waza (Hüftwurf)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Ziehe Gegner hoch und auf deine Hüfte (Tsurikomi = hochziehen).",
+            timing: "Wenn Gegner vorwärts kommt",
+            richtung: "Hoch-vorwärts über Hüfte",
+            kuzushi: "Hoch-vorwärts (wichtig: HOCH!)",
+            tsukuri: "Hüfte eindrehen, eine Hand zieht HOCH am Ärmel",
+            kake: "Hochziehen + Hüfte heben"
+        },
+
+        schlüsselpunkte: [
+            "Tsurikomi = hochziehen - das ist der Schlüssel!",
+            "Eine Hand zieht hoch (Hebezug)",
+            "Unterschied zu O-goshi: Hochziehen wichtig",
+            "Gegner kommt höher auf Hüfte",
+            "Sehr effektiv gegen größere Gegner",
+            "Guter Kuzushi essentiell"
+        ],
+
+        fehler: [
+            "❌ Nicht hochziehen → Wird zu normalem O-goshi",
+            "❌ Beide Arme gleich → Eine Hand MUSS hochziehen",
+            "❌ Zu flacher Kuzushi → Braucht Höhe",
+            "❌ Hüfte zu niedrig → Gegner kann nicht drauf",
+            "❌ Schlechtes Timing → Kraftverschwendung"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Tsurikomi-Bewegung isoliert",
+                    beschreibung: "Übe nur die Hochzieh-Bewegung",
+                    dauer: "10 Min",
+                    wiederholungen: "60x",
+                    fokus: "Gefühl für 'hochziehen'"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-5)",
+                    beschreibung: "Hochziehen + Eindrehen",
+                    intensität: "Partner passiv",
+                    wiederholungen: 90
+                },
+                {
+                    phase: "Nage-komi (Woche 6-14)",
+                    beschreibung: "Werfen mit Betonung auf Hochziehen",
+                    intensität: "Partner 30%",
+                    wiederholungen: 45
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 3,
+            anforderungen: [
+                "Deutliches Hochziehen zeigen",
+                "Hoher Kuzushi",
+                "Unterschied zu O-goshi erkennbar",
+                "Sauberer Wurf"
+            ]
+        }
+    },
+
+    {
+        id: "okuri-ashi-barai",
+        name: "Okuri-ashi-barai",
+        nameDE: "Nachziehender Fußfeger",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-nikyo (2. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Fege beide Füße des Gegners gleichzeitig weg während er seitwärts bewegt.",
+            timing: "Im Moment wenn Gegner Füße zusammenbringt bei Seitwärtsbewegung",
+            richtung: "Seitwärts",
+            kuzushi: "Seitwärts, Gegner bewegt sich lateral",
+            tsukuri: "Bewege Gegner seitwärts, warte bis Füße zusammen",
+            kake: "Fege beide Füße gleichzeitig weg"
+        },
+
+        schlüsselpunkte: [
+            "Okuri = nachziehend - Gegner zieht Fuß nach",
+            "BEIDE Füße werden gefegt (nicht nur einer)",
+            "Timing ist EXTREM wichtig",
+            "Seitwärtsbewegung zwingend nötig",
+            "Sehr spektakulärer Wurf",
+            "Braucht gute Führung mit Händen"
+        ],
+
+        fehler: [
+            "❌ Nur einen Fuß fegen → Funktioniert nicht",
+            "❌ Gegner bewegt sich nicht seitwärts → Unmöglich",
+            "❌ Falsches Timing → Füße nicht zusammen",
+            "❌ Zu schwache Handbewegung → Kein Kuzushi",
+            "❌ Zu früh oder spät → Gegner stabil"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Fege-Timing",
+                    beschreibung: "Visualisiere Seitwärtsbewegung + Fegen",
+                    dauer: "10 Min",
+                    wiederholungen: "50x pro Seite",
+                    fokus: "Timing-Gefühl"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Geführte Bewegung (Woche 1-4)",
+                    beschreibung: "Partner macht langsame Seitwärtsschritte",
+                    intensität: "Partner sehr passiv",
+                    wiederholungen: 80
+                },
+                {
+                    phase: "Freie Bewegung (Woche 5-12)",
+                    beschreibung: "Aus normaler Bewegung",
+                    intensität: "Partner 30%",
+                    wiederholungen: 40
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 4,
+            anforderungen: [
+                "Seitwärtsbewegung zeigen",
+                "Beide Füße gleichzeitig",
+                "Perfektes Timing",
+                "Spektakulärer, sauberer Wurf"
+            ]
+        }
+    },
+
+    {
+        id: "tai-otoshi",
+        name: "Tai-otoshi",
+        nameDE: "Körpersturz",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-nikyo (2. Gruppe)",
+        wazaTyp: "Te-waza (Handtechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Dein Bein blockiert, Hände drehen Gegner darüber - reine Handtechnik ohne Hüfte.",
+            timing: "Wenn Gegner vorwärts kommt",
+            richtung: "Vorwärts-diagonal über dein Bein",
+            kuzushi: "Vorwärts-diagonal",
+            tsukuri: "Bein blockiert vor seinem Schienbein, Körper dreht",
+            kake: "Drehe mit Händen, Bein ist nur Hindernis"
+        },
+
+        schlüsselpunkte: [
+            "Te-waza = Handtechnik (NICHT Hüftwurf!)",
+            "Bein blockiert nur, trägt nicht",
+            "Hände machen die ganze Arbeit",
+            "Sehr technischer Wurf",
+            "Schnelle, explosive Drehung",
+            "Einer der schwierigsten Würfe"
+        ],
+
+        fehler: [
+            "❌ Hüfte benutzen → Wird zu Hüftwurf",
+            "❌ Bein zu aktiv → Bein nur passives Hindernis",
+            "❌ Nicht genug Handaktion → Hände sind wichtig!",
+            "❌ Falsche Platzierung Bein → Gegner stolpert nicht",
+            "❌ Zu langsam → Braucht Schnelligkeit"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Dreh-Bewegung ohne Hüfte",
+                    beschreibung: "Übe Drehung nur mit Händen",
+                    dauer: "15 Min",
+                    wiederholungen: "70x beide Seiten",
+                    fokus: "Nur Hände, keine Hüfte!"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-8)",
+                    beschreibung: "Massenwiederholungen",
+                    intensität: "Partner passiv",
+                    wiederholungen: 150
+                },
+                {
+                    phase: "Nage-komi (Woche 9-20)",
+                    beschreibung: "Werfen (braucht viel Übung!)",
+                    intensität: "Partner 25%",
+                    wiederholungen: 50
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 4,
+            anforderungen: [
+                "Klar als Te-waza erkennbar",
+                "Keine Hüfte im Spiel",
+                "Starke Handaktion",
+                "Saubere Ausführung"
+            ]
+        }
+    },
+
+    {
+        id: "harai-goshi",
+        name: "Harai-goshi",
+        nameDE: "Fegende Hüfte",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-nikyo (2. Gruppe)",
+        wazaTyp: "Koshi-waza (Hüftwurf)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Fege Gegners Beine weg während er auf deiner Hüfte liegt - Kombination aus O-goshi + Bein-Fegen.",
+            timing: "Wenn Gegner vorwärts kommt",
+            richtung: "Vorwärts über Hüfte",
+            kuzushi: "Hoch-vorwärts",
+            tsukuri: "Hüfte eindrehen (wie O-goshi), Bein bereit zum Fegen",
+            kake: "Hüfte hebt + Bein fegt gleichzeitig"
+        },
+
+        schlüsselpunkte: [
+            "Harai = fegen - Bein fegt aktiv",
+            "Kombination: Hüfte UND Bein",
+            "Sehr dynamischer Wurf",
+            "Bein fegt in großem Bogen",
+            "Hüfte und Bein müssen synchron sein",
+            "Sehr beliebt im Wettkampf"
+        ],
+
+        fehler: [
+            "❌ Nur Hüfte, Bein vergessen → Wird zu O-goshi",
+            "❌ Nur Bein, keine Hüfte → Ineffektiv",
+            "❌ Falsche Synchronisation → Nicht koordiniert",
+            "❌ Zu langsam → Braucht Schwung",
+            "❌ Bein zu niedrig → Fegt nicht richtig"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Hüfte + Bein-Koordination",
+                    beschreibung: "Übe gleichzeitiges Drehen und Fegen",
+                    dauer: "15 Min",
+                    wiederholungen: "60x pro Seite",
+                    fokus: "Synchronisation"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-6)",
+                    beschreibung: "Eindrehen + Fegen ohne Wurf",
+                    intensität: "Partner passiv",
+                    wiederholungen: 100
+                },
+                {
+                    phase: "Nage-komi (Woche 7-16)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 30%",
+                    wiederholungen: 50
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 2,
+            anforderungen: [
+                "Deutliche Fege-Bewegung",
+                "Hüfte aktiv",
+                "Beides synchron",
+                "Dynamischer Wurf"
+            ]
+        }
+    },
+
+    {
+        id: "uchi-mata",
+        name: "Uchi-mata",
+        nameDE: "Innerer Schenkel",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-nikyo (2. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Dein Bein hebt von innen zwischen Gegners Beinen - sehr kraftvoller Wurf.",
+            timing: "Wenn Gegner vorwärts kommt oder hoch ist",
+            richtung: "Hoch-vorwärts",
+            kuzushi: "Hoch-vorwärts",
+            tsukuri: "Drehe ein, Bein schwingt zwischen seine Beine",
+            kake: "Hebe mit Bein von innen + ziehe mit Händen"
+        },
+
+        schlüsselpunkte: [
+            "Uchi-mata = innerer Schenkel",
+            "Einer der effektivsten Würfe im Judo",
+            "Sehr vielseitig (viele Varianten)",
+            "Bein hebt von INNEN",
+            "Hüfte dreht stark ein",
+            "Kann sehr hoch geworfen werden"
+        ],
+
+        fehler: [
+            "❌ Nicht von innen → Falsche Richtung",
+            "❌ Zu wenig Kuzushi → Braucht guten Kuzushi",
+            "❌ Bein tritt statt hebt → Ineffektiv",
+            "❌ Nicht genug eindrehen → Schlechter Winkel",
+            "❌ Zu aufrecht → Braucht Vorlage"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Uchi-mata Schwung",
+                    beschreibung: "Übe Bein-Schwung von innen",
+                    dauer: "15 Min täglich",
+                    wiederholungen: "80x pro Seite",
+                    fokus: "Hoher Schwung, von innen"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-8)",
+                    beschreibung: "Massenwiederholungen",
+                    intensität: "Partner passiv",
+                    wiederholungen: 150
+                },
+                {
+                    phase: "Nage-komi (Woche 9-20)",
+                    beschreibung: "Werfen (lange Lernkurve!)",
+                    intensität: "Partner 30%",
+                    wiederholungen: 60
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 2,
+            anforderungen: [
+                "Von innen heben",
+                "Hoher Kuzushi",
+                "Starke Drehung",
+                "Kraftvoller, hoher Wurf"
+            ]
+        }
+    }
+];
+
+// Dai-sankyo (Dritte Gruppe) - 8 Techniken
+const DAI_SANKYO = [
+    {
+        id: "ko-soto-gake",
+        name: "Ko-soto-gake",
+        nameDE: "Kleines Außenhaken",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-sankyo (3. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Hake Gegners Bein von außen mit deiner Wade.",
+            timing: "Wenn Gegner zurückweicht",
+            richtung: "Rückwärts-seitlich",
+            kuzushi: "Rückwärts zur gehakten Seite",
+            tsukuri: "Deine Wade hakt hinter seine Wade/Kniekehle",
+            kake: "Ziehe rückwärts während Bein gehakt ist"
+        },
+
+        schlüsselpunkte: [
+            "Gake = haken (nicht sensen!)",
+            "Wade an Wade/Kniekehle",
+            "Eher ziehen als schieben",
+            "Sehr technische Bewegung",
+            "Guter Setup für Kombinationen",
+            "Funktioniert gut gegen defensive Gegner"
+        ],
+
+        fehler: [
+            "❌ Sensen statt haken → Falsche Technik",
+            "❌ Zu weit oben haken → Ineffektiv",
+            "❌ Nur Bein, keine Hände → Braucht beides",
+            "❌ Zu viel Kraft → Ist subtil",
+            "❌ Falscher Winkel → Gegner kann ausweichen"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Hak-Bewegung",
+                    beschreibung: "Übe sanftes Haken mit Wade",
+                    dauer: "10 Min",
+                    wiederholungen: "60x pro Seite",
+                    fokus: "Haken, nicht sensen"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-5)",
+                    beschreibung: "Haken üben",
+                    intensität: "Partner passiv",
+                    wiederholungen: 80
+                },
+                {
+                    phase: "Nage-komi (Woche 6-12)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 35%",
+                    wiederholungen: 40
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 4,
+            anforderungen: [
+                "Klar als 'Gake' (haken) erkennbar",
+                "Wade an Wade",
+                "Technisch sauber",
+                "Nicht mit Ko-soto-gari verwechseln"
+            ]
+        }
+    },
+
+    {
+        id: "tsuri-goshi",
+        name: "Tsuri-goshi",
+        nameDE: "Hebehüfte",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-sankyo (3. Gruppe)",
+        wazaTyp: "Koshi-waza (Hüftwurf)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Hebe Gegner hoch auf deine Hüfte mit beiden Armen unter seinem Körper.",
+            timing: "Wenn Gegner vorwärts kommt oder nahe ist",
+            richtung: "Hoch-vorwärts über Hüfte",
+            kuzushi: "Hoch-vorwärts",
+            tsukuri: "Beide Arme unter Gegners Achseln/Armen, Hüfte drunter",
+            kake: "Hebe hoch mit Armen + Hüfte"
+        },
+
+        schlüsselpunkte: [
+            "Tsuri = heben/hochziehen",
+            "BEIDE Arme heben",
+            "Sehr kraftvoller Wurf",
+            "Gegner kommt sehr hoch",
+            "Braucht gute Nähe",
+            "Effektiv gegen kleinere Gegner"
+        ],
+
+        fehler: [
+            "❌ Arme nicht richtig unter Gegner → Kann nicht heben",
+            "❌ Zu wenig Kraft → Braucht Kraft zum Heben",
+            "❌ Keine Hüfte → Nur Arme reicht nicht",
+            "❌ Zu weit weg → Braucht Nähe",
+            "❌ Schlechter Kuzushi → Gegner zu schwer"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Hebe-Bewegung",
+                    beschreibung: "Simuliere Hebenbewegung",
+                    dauer: "8 Min",
+                    wiederholungen: "40x",
+                    fokus: "Arme + Hüfte zusammen"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-4)",
+                    beschreibung: "Eingang ohne volles Heben",
+                    intensität: "Partner passiv",
+                    wiederholungen: 60
+                },
+                {
+                    phase: "Nage-komi (Woche 5-12)",
+                    beschreibung: "Werfen (anstrengend!)",
+                    intensität: "Partner 20%",
+                    wiederholungen: 30
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 4,
+            anforderungen: [
+                "Deutliches Hochheben",
+                "Beide Arme unter Gegner",
+                "Kraftvoller Wurf",
+                "Gute Hüft-Arbeit"
+            ]
+        }
+    },
+
+    {
+        id: "yoko-otoshi",
+        name: "Yoko-otoshi",
+        nameDE: "Seitwärtssturz",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-sankyo (3. Gruppe)",
+        wazaTyp: "Yoko-sutemi-waza (Seitliche Opfertechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Wirf dich seitlich zu Boden und ziehe Gegner mit dir.",
+            timing: "Wenn Gegner seitlich bewegt oder belastet ist",
+            richtung: "Seitlich zum Boden",
+            kuzushi: "Seitwärts-vorwärts",
+            tsukuri: "Ziehe seitlich, bereite Fall vor",
+            kake: "Wirf dich seitlich, ziehe Gegner über dich"
+        },
+
+        schlüsselpunkte: [
+            "Yoko = seitlich, Otoshi = Sturz",
+            "Sutemi-waza = Opfertechnik (du fällst!)",
+            "Überraschungseffekt wichtig",
+            "Sehr guter Timing-Wurf",
+            "Riskant wenn schlecht ausgeführt",
+            "Braucht Mut"
+        ],
+
+        fehler: [
+            "❌ Zu früh fallen → Gegner kann ausweichen",
+            "❌ Falscher Winkel → Fällst umsonst",
+            "❌ Schlechter Kuzushi → Gegner bleibt stehen",
+            "❌ Zu zaghaft → Muss committed sein",
+            "❌ Keine Kontrolle beim Fallen → Gefährlich"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Seitliches Fallen",
+                    beschreibung: "Übe sauberes seitliches Fallen",
+                    dauer: "10 Min",
+                    wiederholungen: "40x pro Seite",
+                    fokus: "Sicheres Fallen"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-6)",
+                    beschreibung: "Bewegung ohne volles Fallen",
+                    intensität: "Partner passiv",
+                    wiederholungen: 60
+                },
+                {
+                    phase: "Nage-komi (Woche 7-14)",
+                    beschreibung: "Werfen (auf weicher Matte!)",
+                    intensität: "Partner 30%",
+                    wiederholungen: 30
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 4,
+            anforderungen: [
+                "Sauberes seitliches Fallen",
+                "Gutes Timing",
+                "Gegner wird kontrolliert geworfen",
+                "Technik klar erkennbar"
+            ]
+        }
+    },
+
+    {
+        id: "ashi-guruma",
+        name: "Ashi-guruma",
+        nameDE: "Beinrad",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-sankyo (3. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Dein Bein blockiert beide Beine des Gegners, Hände drehen ihn darüber wie ein Rad.",
+            timing: "Wenn Gegner vorwärts kommt",
+            richtung: "Vorwärts über blockiertes Bein",
+            kuzushi: "Hoch-vorwärts",
+            tsukuri: "Bein blockiert quer vor beiden Beinen, Körper dreht",
+            kake: "Drehe mit Händen, Bein bleibt blockierend"
+        },
+
+        schlüsselpunkte: [
+            "Guruma = Rad",
+            "Ähnlich Harai-goshi aber Bein blockiert (fegt nicht)",
+            "Bein ist steif/blockierend",
+            "Gegner rollt über wie Rad",
+            "Hände machen Hauptarbeit",
+            "Timing sehr wichtig"
+        ],
+
+        fehler: [
+            "❌ Bein fegt → Wird zu Harai-goshi",
+            "❌ Zu flexibles Bein → Muss blockieren",
+            "❌ Nur Bein, Hände vergessen → Braucht Hände!",
+            "❌ Zu niedriges Bein → Falsche Höhe",
+            "❌ Verwechslung mit anderen Techniken → Muss klar sein"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Blockier-Position",
+                    beschreibung: "Übe steifes Bein blockieren",
+                    dauer: "10 Min",
+                    wiederholungen: "50x pro Seite",
+                    fokus: "Bein steif, nicht fegens"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-6)",
+                    beschreibung: "Eingang mit Blockade",
+                    intensität: "Partner passiv",
+                    wiederholungen: 80
+                },
+                {
+                    phase: "Nage-komi (Woche 7-14)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 30%",
+                    wiederholungen: 40
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 3,
+            anforderungen: [
+                "Bein blockiert (fegt nicht)",
+                "Rad-Bewegung erkennbar",
+                "Unterschied zu Harai-goshi klar",
+                "Gute Handaktion"
+            ]
+        }
+    },
+
+    {
+        id: "hane-goshi",
+        name: "Hane-goshi",
+        nameDE: "Hüftsprung",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-sankyo (3. Gruppe)",
+        wazaTyp: "Koshi-waza (Hüftwurf)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Dein Bein springt/hebt nach oben zwischen Gegners Beinen während Hüfte hebt.",
+            timing: "Wenn Gegner vorwärts kommt",
+            richtung: "Hoch-vorwärts",
+            kuzushi: "Hoch-vorwärts",
+            tsukuri: "Hüfte eindrehen, Bein springt hoch zwischen seine Beine",
+            kake: "Hüfte hebt + Bein springt gleichzeitig"
+        },
+
+        schlüsselpunkte: [
+            "Hane = springen/schnellen",
+            "Bein macht Sprung-Bewegung HOCH",
+            "Unterschied zu Harai-goshi: springt statt fegt",
+            "Sehr dynamischer Wurf",
+            "Braucht Explosivität",
+            "Hüfte und Bein synchron"
+        ],
+
+        fehler: [
+            "❌ Bein fegt → Wird zu Harai-goshi",
+            "❌ Kein Sprung → Muss dynamisch sein",
+            "❌ Nur Hüfte → Bein muss aktiv sein",
+            "❌ Zu langsam → Braucht Schnelligkeit",
+            "❌ Falsche Richtung → Muss hoch gehen"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Sprung-Bewegung",
+                    beschreibung: "Übe explosives Bein-Hochschnellen",
+                    dauer: "12 Min",
+                    wiederholungen: "50x pro Seite",
+                    fokus: "Explosivität, Höhe"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-5)",
+                    beschreibung: "Eingang mit Sprung-Bewegung",
+                    intensität: "Partner passiv",
+                    wiederholungen: 90
+                },
+                {
+                    phase: "Nage-komi (Woche 6-14)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 30%",
+                    wiederholungen: 45
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 3,
+            anforderungen: [
+                "Sprung-Bewegung sichtbar",
+                "Unterschied zu Harai-goshi klar",
+                "Dynamisch und explosiv",
+                "Hoher Wurf"
+            ]
+        }
+    },
+
+    {
+        id: "harai-tsurikomi-ashi",
+        name: "Harai-tsurikomi-ashi",
+        nameDE: "Fegender Hebezug-Fuß",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-sankyo (3. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Fege Gegners Fuß weg während du hochziehst (Tsurikomi).",
+            timing: "Wenn Gegner vorwärts tritt",
+            richtung: "Vorwärts-hoch",
+            kuzushi: "Hoch-vorwärts (Tsurikomi wichtig!)",
+            tsukuri: "Position für Fegen + Hände ziehen hoch",
+            kake: "Fege + hochziehen gleichzeitig"
+        },
+
+        schlüsselpunkte: [
+            "Kombination: Harai (fegen) + Tsurikomi (hochziehen)",
+            "Ähnlich De-ashi-barai aber mit Hochziehen",
+            "Hände sehr aktiv",
+            "Gegner wird hoch geworfen",
+            "Timing essentiell",
+            "Eleganter Wurf"
+        ],
+
+        fehler: [
+            "❌ Nicht hochziehen → Wird zu De-ashi-barai",
+            "❌ Nur fegen ohne Hände → Ineffektiv",
+            "❌ Falsches Timing → Funktioniert nicht",
+            "❌ Zu flacher Kuzushi → Braucht Höhe",
+            "❌ Verwechslung mit anderen Techniken"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Fegen + Hochziehen kombiniert",
+                    beschreibung: "Synchronisation üben",
+                    dauer: "10 Min",
+                    wiederholungen: "60x",
+                    fokus: "Beides gleichzeitig"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-5)",
+                    beschreibung: "Timing + Koordination",
+                    intensität: "Partner passiv",
+                    wiederholungen: 80
+                },
+                {
+                    phase: "Nage-komi (Woche 6-12)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 30%",
+                    wiederholungen: 35
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 4,
+            anforderungen: [
+                "Tsurikomi deutlich zeigen",
+                "Fege-Bewegung sichtbar",
+                "Beides koordiniert",
+                "Hoher Wurf"
+            ]
+        }
+    },
+
+    {
+        id: "tomoe-nage",
+        name: "Tomoe-nage",
+        nameDE: "Kreisschleuder / Radrollen",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-sankyo (3. Gruppe)",
+        wazaTyp: "Ma-sutemi-waza (Rückwärtige Opfertechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Wirf dich rückwärts, setze Fuß an Gegners Bauch und schleudere ihn über dich.",
+            timing: "Wenn Gegner vorwärts drängt",
+            richtung: "Über deinen Körper rückwärts",
+            kuzushi: "Vorwärts auf dich",
+            tsukuri: "Rückwärts fallen, Fuß an Bauch/Hüfte",
+            kake: "Ziehe + stoße mit Fuß, schleudere über dich"
+        },
+
+        schlüsselpunkte: [
+            "Tomoe = Kreis - kreisende Bewegung",
+            "Ma-sutemi = rückwärtige Opfertechnik",
+            "Sehr spektakulär",
+            "Fuß an Bauch (nicht treten!)",
+            "Braucht Momentum von Gegner",
+            "Risiko wenn falsch ausgeführt"
+        ],
+
+        fehler: [
+            "❌ Zu früh fallen → Gegner nicht drauf",
+            "❌ Kein Momentum → Funktioniert nicht",
+            "❌ Falscher Fuß-Einsatz → Ineffektiv oder gefährlich",
+            "❌ Nicht committed → Halbe Sachen funktionieren nicht",
+            "❌ Schlechte Landung → Kann wehtun"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Rückwärts-Rolle",
+                    beschreibung: "Übe sauberes Rückwärts-Fallen",
+                    dauer: "10 Min",
+                    wiederholungen: "30x",
+                    fokus: "Sichere Landung"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-8)",
+                    beschreibung: "Bewegung ohne volles Werfen",
+                    intensität: "Partner sehr passiv",
+                    wiederholungen: 50
+                },
+                {
+                    phase: "Nage-komi (Woche 9-16)",
+                    beschreibung: "Werfen (vorsichtig!)",
+                    intensität: "Partner 20%",
+                    wiederholungen: 25
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Saubere Opfertechnik",
+                "Spektakulärer Wurf",
+                "Sicher für beide",
+                "Gute Kontrolle"
+            ]
+        }
+    },
+
+    {
+        id: "kata-guruma",
+        name: "Kata-guruma",
+        nameDE: "Schulterrad",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-sankyo (3. Gruppe)",
+        wazaTyp: "Te-waza (Handtechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Lade Gegner auf deine Schultern und wirf ihn wie ein Rad herum.",
+            timing: "Wenn Gegner vorwärts oder gebeugt ist",
+            richtung: "Über deine Schulter seitlich",
+            kuzushi: "Vorwärts-seitlich",
+            tsukuri: "Sehr tief gehen, Gegner auf Schultern laden, Griff am Bein",
+            kake: "Aufrichten + drehen, Gegner fliegt"
+        },
+
+        schlüsselpunkte: [
+            "Guruma = Rad",
+            "Sehr tief gehen (fast kniend)",
+            "Gegner auf BEIDEN Schultern",
+            "ACHTUNG: Moderne Regeln eingeschränkt!",
+            "Sehr kraftvoll",
+            "Braucht Flexibilität"
+        ],
+
+        fehler: [
+            "❌ Nicht tief genug → Kommt nicht unter Gegner",
+            "❌ Beingriff falsch → Regelverstoß möglich!",
+            "❌ Zu aufrecht → Ineffektiv",
+            "❌ Schlechte Balance → Fällt selbst",
+            "❌ WICHTIG: Moderne IJF-Regeln beachten!"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Tiefe Position",
+                    beschreibung: "Übe sehr tiefe Hocke mit Balance",
+                    dauer: "10 Min",
+                    wiederholungen: "40x",
+                    fokus: "Tiefe + Balance"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-6)",
+                    beschreibung: "Eingang (Regeln beachten!)",
+                    intensität: "Partner passiv",
+                    wiederholungen: 60
+                },
+                {
+                    phase: "Nage-komi (Woche 7-14)",
+                    beschreibung: "Werfen (nur wenn erlaubt!)",
+                    intensität: "Partner 25%",
+                    wiederholungen: 30
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Sehr tiefe Position",
+                "Regelkonform ausführen",
+                "Gegner auf Schultern",
+                "Kraftvoller Wurf (wenn erlaubt)"
+            ]
+        }
+    }
+];
+
+// Dai-yonkyo (Vierte Gruppe) - 8 Techniken
+const DAI_YONKYO = [
+    {
+        id: "sumi-gaeshi",
+        name: "Sumi-gaeshi",
+        nameDE: "Eckenumkehr",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-yonkyo (4. Gruppe)",
+        wazaTyp: "Ma-sutemi-waza (Rückwärtige Opfertechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Ziehe Gegner in die Ecke (Sumi) und rolle rückwärts, werfe ihn über dich.",
+            timing: "Wenn Gegner defensiv/gebeugt ist",
+            richtung: "Diagonal-rückwärts über dich",
+            kuzushi: "Diagonal zur Ecke",
+            tsukuri: "Falle rückwärts, Fuß an Innenschenkel",
+            kake: "Rolle + Fuß hebt, schleudere diagonal"
+        },
+
+        schlüsselpunkte: [
+            "Sumi = Ecke - diagonale Richtung",
+            "Gaeshi = Umkehr/Konter",
+            "Guter Konter gegen defensive Gegner",
+            "Fuß an Innenschenkel (nicht Bauch)",
+            "Diagonale Richtung wichtig",
+            "Technischer als Tomoe-nage"
+        ],
+
+        fehler: [
+            "❌ Nicht diagonal → Falsche Richtung",
+            "❌ Fuß falsch platziert → Ineffektiv",
+            "❌ Kein Momentum → Braucht Zug",
+            "❌ Zu aufrecht → Muss rückwärts rollen",
+            "❌ Verwechslung mit Tomoe-nage"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Diagonale Rückwärtsrolle",
+                    beschreibung: "Übe diagonal-rückwärts rollen",
+                    dauer: "10 Min",
+                    wiederholungen: "30x pro Seite",
+                    fokus: "Diagonale Richtung"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-6)",
+                    beschreibung: "Bewegung ohne volles Werfen",
+                    intensität: "Partner passiv",
+                    wiederholungen: 60
+                },
+                {
+                    phase: "Nage-komi (Woche 7-14)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 25%",
+                    wiederholungen: 30
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Diagonale Richtung klar",
+                "Unterschied zu Tomoe-nage",
+                "Saubere Opfertechnik",
+                "Kontrolliert"
+            ]
+        }
+    },
+
+    {
+        id: "tani-otoshi",
+        name: "Tani-otoshi",
+        nameDE: "Talsturz",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-yonkyo (4. Gruppe)",
+        wazaTyp: "Yoko-sutemi-waza (Seitliche Opfertechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Blockiere Gegners Bein von hinten und wirf dich seitlich-rückwärts, ziehe ihn mit.",
+            timing: "Wenn Gegner zurückweicht oder seitlich belastet",
+            richtung: "Rückwärts-seitlich",
+            kuzushi: "Rückwärts",
+            tsukuri: "Dein Bein blockiert sein Bein von hinten, bereit zu fallen",
+            kake: "Falle seitlich-rückwärts + ziehe"
+        },
+
+        schlüsselpunkte: [
+            "Tani = Tal - fällt ins Tal",
+            "Seitliche Opfertechnik",
+            "Bein blockiert von hinten",
+            "Sehr effektiver Konter",
+            "Kann gefährlich sein (Knie-Belastung)",
+            "Vorsicht beim Training!"
+        ],
+
+        fehler: [
+            "❌ GEFAHR für Knie des Partners → Vorsichtig!",
+            "❌ Falscher Winkel → Partner verletzt",
+            "❌ Zu aggressiv → Verletzungsgefahr",
+            "❌ Kein Kuzushi → Funktioniert nicht",
+            "❌ Schlechte Kontrolle → Gefährlich"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Seitlich-rückwärts fallen",
+                    beschreibung: "Übe sichere Landung",
+                    dauer: "8 Min",
+                    wiederholungen: "25x pro Seite",
+                    fokus: "Sicherheit"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-8)",
+                    beschreibung: "SEHR vorsichtig üben",
+                    intensität: "Partner sehr passiv",
+                    wiederholungen: 40
+                },
+                {
+                    phase: "Nage-komi (Woche 9-16)",
+                    beschreibung: "Nur mit Erfahrung!",
+                    intensität: "Partner 15%",
+                    wiederholungen: 20
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "SICHER ausführen!",
+                "Keine Knie-Belastung für Partner",
+                "Saubere Opfertechnik",
+                "Gute Kontrolle absolut notwendig"
+            ]
+        }
+    },
+
+    {
+        id: "hane-maki-komi",
+        name: "Hane-maki-komi",
+        nameDE: "Spring-Einwickler",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-yonkyo (4. Gruppe)",
+        wazaTyp: "Yoko-sutemi-waza (Seitliche Opfertechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Springe (Hane) und wickle (Maki-komi) Gegner ein während du seitlich fällst.",
+            timing: "Wenn Gegner vorwärts kommt",
+            richtung: "Seitlich eingewickelt",
+            kuzushi: "Vorwärts-seitlich",
+            tsukuri: "Sprung-Bewegung + Arm wickelt Gegners Arm ein",
+            kake: "Falle seitlich + wickle ein + Bein springt"
+        },
+
+        schlüsselpunkte: [
+            "Hane = springen, Maki-komi = einwickeln",
+            "Sehr dynamisch",
+            "Arm-Kontrolle essentiell",
+            "Seitliche Opfertechnik",
+            "Spektakulär",
+            "Braucht Mut und Timing"
+        ],
+
+        fehler: [
+            "❌ Kein Sprung → Nicht dynamisch genug",
+            "❌ Arm nicht eingewickelt → Keine Kontrolle",
+            "❌ Falscher Winkel beim Fallen → Ineffektiv",
+            "❌ Zu zaghaft → Muss committed sein",
+            "❌ Schlechte Landung → Verletzungsgefahr"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Sprung + Fall Koordination",
+                    beschreibung: "Übe Bewegungsablauf",
+                    dauer: "10 Min",
+                    wiederholungen: "30x",
+                    fokus: "Koordination + Sicherheit"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-8)",
+                    beschreibung: "Langsam aufbauen",
+                    intensität: "Partner passiv",
+                    wiederholungen: 50
+                },
+                {
+                    phase: "Nage-komi (Woche 9-18)",
+                    beschreibung: "Werfen (fortgeschritten!)",
+                    intensität: "Partner 25%",
+                    wiederholungen: 25
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Sprung-Bewegung sichtbar",
+                "Einwickeln erkennbar",
+                "Dynamisch",
+                "Sicher ausgeführt"
+            ]
+        }
+    },
+
+    {
+        id: "suki-nage",
+        name: "Suki-nage",
+        nameDE: "Schaufeln-Wurf",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-yonkyo (4. Gruppe)",
+        wazaTyp: "Te-waza (Handtechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Schaufel-artige Bewegung - hebe und wirf Gegner in Schaufel-Bewegung.",
+            timing: "Flexibel - aus verschiedenen Situationen",
+            richtung: "Variabel - abhängig von Situation",
+            kuzushi: "In Richtung der Schwäche",
+            tsukuri: "Tief gehen, schaufel-artige Armposition",
+            kake: "Schaufel-Bewegung, hebe und wirf"
+        },
+
+        schlüsselpunkte: [
+            "Suki = Lücke/Öffnung/Schaufel",
+            "Sehr flexibler Wurf",
+            "Nutzt Gegners Schwäche",
+            "Keine feste Form",
+            "Situativ anpassen",
+            "Kreativität erlaubt"
+        ],
+
+        fehler: [
+            "❌ Zu starr → Muss anpassbar sein",
+            "❌ Keine klare Idee → Braucht Konzept",
+            "❌ Schlechter Kuzushi → Nutze Schwäche!",
+            "❌ Zu kompliziert → Einfachheit oft besser",
+            "❌ Verwechslung mit anderen Techniken"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Schaufel-Bewegungen",
+                    beschreibung: "Verschiedene Schaufel-Bewegungen üben",
+                    dauer: "10 Min",
+                    wiederholungen: "50x variiert",
+                    fokus: "Flexibilität + Anpassung"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Freies Üben (Woche 1-10)",
+                    beschreibung: "Verschiedene Situationen",
+                    intensität: "Partner 40%",
+                    wiederholungen: 70
+                },
+                {
+                    phase: "Anwendung (Woche 11-20)",
+                    beschreibung: "In realen Situationen",
+                    intensität: "Partner 50%",
+                    wiederholungen: 40
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Klar als Suki-nage erkennbar",
+                "Situativ angemessen",
+                "Schaufel-Bewegung sichtbar",
+                "Effektiv"
+            ]
+        }
+    },
+
+    {
+        id: "utsuri-goshi",
+        name: "Utsuri-goshi",
+        nameDE: "Wechselhüfte / Gegenhüfte",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-yonkyo (4. Gruppe)",
+        wazaTyp: "Koshi-waza (Hüftwurf)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Konter gegen Hüftwurf - wechsle/übertrage (Utsuri) Hüfte und wirf zurück.",
+            timing: "Wenn Gegner Hüftwurf versucht",
+            richtung: "Rückwärts (Konter-Richtung)",
+            kuzushi: "Rückwärts über deine Hüfte",
+            tsukuri: "Gegner versucht Hüftwurf, du gehst mit + überträgst",
+            kake: "Hebe ihn von seiner Hüfte auf deine"
+        },
+
+        schlüsselpunkte: [
+            "Utsuri = wechseln/übertragen",
+            "Klassischer Konter gegen Hüftwürfe",
+            "Braucht gutes Timing",
+            "Kraft wichtig",
+            "Hebe Gegner VON seiner Hüfte",
+            "Sehr effektiv wenn perfekt"
+        ],
+
+        fehler: [
+            "❌ Zu früh kontern → Gegner noch nicht committed",
+            "❌ Nicht genug Kraft → Kann nicht heben",
+            "❌ Falsche Position → Kann nicht übertragen",
+            "❌ Schlechtes Timing → Verpasst Moment",
+            "❌ Keine Hüfte → Braucht Hüft-Arbeit"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Konter-Position",
+                    beschreibung: "Visualisiere Konter-Situation",
+                    dauer: "8 Min",
+                    wiederholungen: "40x",
+                    fokus: "Timing + Position"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Setup-Training (Woche 1-6)",
+                    beschreibung: "Partner versucht Hüftwurf, du konterst",
+                    intensität: "Partner 30%",
+                    wiederholungen: 60
+                },
+                {
+                    phase: "Freies Kontern (Woche 7-16)",
+                    beschreibung: "Aus echten Situationen",
+                    intensität: "Partner 50%",
+                    wiederholungen: 35
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Klar als Konter erkennbar",
+                "Gutes Timing",
+                "Kraftvoller Wurf",
+                "Technisch sauber"
+            ]
+        }
+    },
+
+    {
+        id: "o-guruma",
+        name: "O-guruma",
+        nameDE: "Großes Rad",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-yonkyo (4. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Dein Bein blockiert hoch an Gegners Hüfte, drehe ihn über wie großes Rad.",
+            timing: "Wenn Gegner vorwärts kommt",
+            richtung: "Vorwärts über blockiertes Bein",
+            kuzushi: "Hoch-vorwärts",
+            tsukuri: "Bein blockiert hoch (Hüfthöhe), Körper dreht",
+            kake: "Drehe mit Händen + Körper, Bein bleibt blockierend"
+        },
+
+        schlüsselpunkte: [
+            "O-guruma = Großes Rad",
+            "Bein HOCH (Hüfthöhe, nicht niedrig)",
+            "Unterschied zu Ashi-guruma: höher",
+            "Rad-Bewegung",
+            "Sehr kraftvoll",
+            "Spektakulär wenn sauber"
+        ],
+
+        fehler: [
+            "❌ Bein zu niedrig → Wird zu Ashi-guruma",
+            "❌ Bein fegt → Muss blockieren",
+            "❌ Keine Rad-Bewegung → Name ist 'Guruma'!",
+            "❌ Schlechter Kuzushi → Ineffektiv",
+            "❌ Verwechslung mit anderen Guruma-Techniken"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Hohe Bein-Blockade",
+                    beschreibung: "Übe Bein auf Hüfthöhe zu halten",
+                    dauer: "10 Min",
+                    wiederholungen: "40x pro Seite",
+                    fokus: "Höhe + Balance"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-6)",
+                    beschreibung: "Eingang mit hohem Bein",
+                    intensität: "Partner passiv",
+                    wiederholungen: 70
+                },
+                {
+                    phase: "Nage-komi (Woche 7-14)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 30%",
+                    wiederholungen: 35
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 4,
+            anforderungen: [
+                "Bein hoch (Hüfthöhe)",
+                "Rad-Bewegung erkennbar",
+                "Unterschied zu Ashi-guruma",
+                "Kraftvoller Wurf"
+            ]
+        }
+    },
+
+    {
+        id: "soto-maki-komi",
+        name: "Soto-maki-komi",
+        nameDE: "Außen-Einwickler",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-yonkyo (4. Gruppe)",
+        wazaTyp: "Yoko-sutemi-waza (Seitliche Opfertechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Wickle Gegners Arm von außen (Soto) ein und wirf dich seitlich.",
+            timing: "Wenn Gegner vorwärts kommt oder steif ist",
+            richtung: "Seitlich",
+            kuzushi: "Vorwärts-seitlich",
+            tsukuri: "Arm wickelt von außen ein, bereit zu fallen",
+            kake: "Falle seitlich + ziehe eingewickelten Arm"
+        },
+
+        schlüsselpunkte: [
+            "Soto = außen, Maki-komi = einwickeln",
+            "Von AUSSEN einwickeln",
+            "Seitliche Opfertechnik",
+            "Arm-Kontrolle essentiell",
+            "Unterschied zu Uchi-maki-komi (innen)",
+            "Dynamisch"
+        ],
+
+        fehler: [
+            "❌ Von innen wickeln → Falsche Technik",
+            "❌ Arm nicht kontrolliert → Ineffektiv",
+            "❌ Zu zaghaft fallen → Muss committed sein",
+            "❌ Falscher Winkel → Gegner kann entkommen",
+            "❌ Verwechslung mit Uchi-maki-komi"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Außen-Wickel-Bewegung",
+                    beschreibung: "Übe Einwickeln von außen",
+                    dauer: "10 Min",
+                    wiederholungen: "50x",
+                    fokus: "Von außen, nicht innen"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-6)",
+                    beschreibung: "Wickeln + Fall üben",
+                    intensität: "Partner passiv",
+                    wiederholungen: 60
+                },
+                {
+                    phase: "Nage-komi (Woche 7-14)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 25%",
+                    wiederholungen: 30
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Von außen einwickeln",
+                "Unterschied zu Uchi-maki-komi",
+                "Saubere Opfertechnik",
+                "Gute Arm-Kontrolle"
+            ]
+        }
+    },
+
+    {
+        id: "uki-otoshi",
+        name: "Uki-otoshi",
+        nameDE: "Schwebender Sturz",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-yonkyo (4. Gruppe)",
+        wazaTyp: "Te-waza (Handtechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Reine Handtechnik - ziehe Gegner zu Boden ohne Bein oder Hüfte zu benutzen.",
+            timing: "Wenn Gegner vorwärts kommt",
+            richtung: "Vorwärts-abwärts",
+            kuzushi: "Vorwärts-abwärts zur Ecke",
+            tsukuri: "Seitlich ausweichen, Hände kontrollieren",
+            kake: "Ziehe nach unten-vorwärts, nur mit Händen"
+        },
+
+        schlüsselpunkte: [
+            "Uki = schweben, Otoshi = Sturz",
+            "REINSTE Handtechnik im Judo",
+            "KEINE Beine, KEINE Hüfte",
+            "Sehr technisch und schwierig",
+            "Perfekter Kuzushi absolut notwendig",
+            "Erste Technik im Gokyo ursprünglich"
+        ],
+
+        fehler: [
+            "❌ Bein benutzen → Wird zu anderer Technik",
+            "❌ Hüfte benutzen → Nicht mehr Te-waza",
+            "❌ Kraft statt Technik → Muss technisch sein",
+            "❌ Schlechter Kuzushi → Funktioniert überhaupt nicht",
+            "❌ Timing falsch → Sehr schwierig zu treffen"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Reine Hand-Bewegung",
+                    beschreibung: "Übe Zieh-Bewegung ohne Körper",
+                    dauer: "12 Min",
+                    wiederholungen: "60x",
+                    fokus: "NUR Hände, nichts anderes"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Kuzushi-Training (Woche 1-10)",
+                    beschreibung: "Perfekten Kuzushi lernen",
+                    intensität: "Partner sehr passiv",
+                    wiederholungen: 100
+                },
+                {
+                    phase: "Anwendung (Woche 11-24)",
+                    beschreibung: "Versuchen anzuwenden (sehr schwierig!)",
+                    intensität: "Partner 40%",
+                    wiederholungen: 50
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Absolut KEINE Beine oder Hüfte",
+                "Perfekter Kuzushi",
+                "Technisch makellos",
+                "Sehr schwierig - höchstes Niveau"
+            ]
+        }
+    }
+];
+
+// Dai-gokyo (Fünfte Gruppe) - 8 Techniken
+const DAI_GOKYO = [
+    {
+        id: "o-soto-guruma",
+        name: "O-soto-guruma",
+        nameDE: "Großes Außen-Rad",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-gokyo (5. Gruppe)",
+        wazaTyp: "Ashi-waza (Fußtechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Ähnlich O-soto-gari aber mit Rad-Bewegung - Bein blockiert, dreht nicht sens.",
+            timing: "Wenn Gegner rückwärts belastet ist",
+            richtung: "Rückwärts mit Drehung",
+            kuzushi: "Rückwärts-diagonal",
+            tsukuri: "Bein blockiert von außen (wie O-soto), aber steifer",
+            kake: "Drehe wie Rad, Bein blockiert"
+        },
+
+        schlüsselpunkte: [
+            "Guruma = Rad - das ist der Unterschied!",
+            "NICHT sensen wie O-soto-gari",
+            "Bein blockiert steif",
+            "Körper macht Rad-Bewegung",
+            "Kombination aus O-soto + Guruma-Prinzip",
+            "Feiner Unterschied, wichtig für Prüfung"
+        ],
+
+        fehler: [
+            "❌ Sensen → Wird zu O-soto-gari",
+            "❌ Kein Rad → Name ist 'Guruma'!",
+            "❌ Bein zu flexibel → Muss blockieren",
+            "❌ Verwechslung mit O-soto-gari",
+            "❌ Keine klare Rad-Bewegung"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Blockier-Bewegung (nicht Sens)",
+                    beschreibung: "Übe steifes Blockieren",
+                    dauer: "10 Min",
+                    wiederholungen: "50x pro Seite",
+                    fokus: "Unterschied zu O-soto-gari"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-6)",
+                    beschreibung: "Rad-Bewegung betonen",
+                    intensität: "Partner passiv",
+                    wiederholungen: 70
+                },
+                {
+                    phase: "Nage-komi (Woche 7-14)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 30%",
+                    wiederholungen: 35
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 4,
+            anforderungen: [
+                "Klar als Guruma erkennbar",
+                "NICHT sensen",
+                "Rad-Bewegung zeigen",
+                "Unterschied zu O-soto-gari deutlich"
+            ]
+        }
+    },
+
+    {
+        id: "uki-waza",
+        name: "Uki-waza",
+        nameDE: "Schwebende Technik",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-gokyo (5. Gruppe)",
+        wazaTyp: "Yoko-sutemi-waza (Seitliche Opfertechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Schwebende Opfertechnik - falle seitlich und lasse Gegner 'schweben' über dich.",
+            timing: "Wenn Gegner vorwärts kommt",
+            richtung: "Seitlich-vorwärts",
+            kuzushi: "Vorwärts-seitlich",
+            tsukuri: "Bereite seitlichen Fall vor",
+            kake: "Falle seitlich, Gegner schwebt/fliegt über"
+        },
+
+        schlüsselpunkte: [
+            "Uki = schweben - Gegner schwebt",
+            "Sehr fließende Bewegung",
+            "Seitliche Opfertechnik",
+            "Eleganter Wurf",
+            "Braucht gutes Timing",
+            "Ähnlich Yoko-otoshi aber anders"
+        ],
+
+        fehler: [
+            "❌ Zu früh fallen → Gegner nicht mitgezogen",
+            "❌ Kein Schwebe-Gefühl → Zu grob",
+            "❌ Falscher Winkel → Ineffektiv",
+            "❌ Schlechter Kuzushi → Funktioniert nicht",
+            "❌ Verwechslung mit Yoko-otoshi"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Fließender seitlicher Fall",
+                    beschreibung: "Übe elegantes seitliches Fallen",
+                    dauer: "10 Min",
+                    wiederholungen: "35x pro Seite",
+                    fokus: "Fließend, schwebend"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-6)",
+                    beschreibung: "Bewegung + Timing",
+                    intensität: "Partner passiv",
+                    wiederholungen: 60
+                },
+                {
+                    phase: "Nage-komi (Woche 7-14)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 25%",
+                    wiederholungen: 30
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Schwebe-Gefühl erkennbar",
+                "Elegant ausgeführt",
+                "Saubere Opfertechnik",
+                "Unterschied zu Yoko-otoshi"
+            ]
+        }
+    },
+
+    {
+        id: "yoko-wakare",
+        name: "Yoko-wakare",
+        nameDE: "Seitliche Trennung",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-gokyo (5. Gruppe)",
+        wazaTyp: "Yoko-sutemi-waza (Seitliche Opfertechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Trenne (Wakare) dich seitlich von Gegner während du fällst und wirfst.",
+            timing: "Wenn Gegner vorwärts drängt",
+            richtung: "Seitlich",
+            kuzushi: "Vorwärts",
+            tsukuri: "Bereite Trennung vor, ein Bein zwischen seinen Beinen",
+            kake: "Falle seitlich + trenne + Bein hilft"
+        },
+
+        schlüsselpunkte: [
+            "Wakare = Trennung/Separation",
+            "Trennungs-Bewegung wichtig",
+            "Ein Bein zwischen Gegners Beinen",
+            "Seitliche Opfertechnik",
+            "Dynamisch",
+            "Ähnlich anderen Yoko-sutemi aber eigen"
+        ],
+
+        fehler: [
+            "❌ Keine Trennung → Name ist 'Wakare'!",
+            "❌ Bein falsch → Ein Bein muss zwischen",
+            "❌ Zu zaghaft → Muss committed sein",
+            "❌ Verwechslung mit anderen Yoko-sutemi",
+            "❌ Schlechtes Timing"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Trennungs-Bewegung",
+                    beschreibung: "Übe Trenn-Bewegung seitlich",
+                    dauer: "10 Min",
+                    wiederholungen: "40x",
+                    fokus: "Trennung betonen"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-6)",
+                    beschreibung: "Bewegung lernen",
+                    intensität: "Partner passiv",
+                    wiederholungen: 60
+                },
+                {
+                    phase: "Nage-komi (Woche 7-14)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 25%",
+                    wiederholungen: 30
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Trennungs-Bewegung sichtbar",
+                "Bein richtig platziert",
+                "Saubere Ausführung",
+                "Klar erkennbar als Yoko-wakare"
+            ]
+        }
+    },
+
+    {
+        id: "yoko-guruma",
+        name: "Yoko-guruma",
+        nameDE: "Seitliches Rad",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-gokyo (5. Gruppe)",
+        wazaTyp: "Yoko-sutemi-waza (Seitliche Opfertechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Seitliches Rad - wirf dich seitlich und drehe Gegner wie Rad über dich.",
+            timing: "Wenn Gegner vorwärts kommt",
+            richtung: "Seitlich mit Rad-Drehung",
+            kuzushi: "Vorwärts-hoch",
+            tsukuri: "Position für seitlichen Fall + Rad-Bewegung",
+            kake: "Falle seitlich + drehe wie Rad"
+        },
+
+        schlüsselpunkte: [
+            "Yoko = seitlich, Guruma = Rad",
+            "Rad-Bewegung seitlich",
+            "Sehr spektakulär",
+            "Opfertechnik",
+            "Braucht gute Koordination",
+            "Ähnlich Tomoe-nage aber seitlich"
+        ],
+
+        fehler: [
+            "❌ Kein Rad → Name ist 'Guruma'!",
+            "❌ Nicht seitlich genug → Richtung wichtig",
+            "❌ Schlechte Koordination → Komplex",
+            "❌ Zu langsam → Braucht Schwung",
+            "❌ Verwechslung mit Tomoe-nage"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Seitliche Rad-Rolle",
+                    beschreibung: "Übe Rad-Bewegung seitlich",
+                    dauer: "10 Min",
+                    wiederholungen: "30x pro Seite",
+                    fokus: "Rad-Bewegung + Seitlich"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-8)",
+                    beschreibung: "Komplexe Bewegung lernen",
+                    intensität: "Partner passiv",
+                    wiederholungen: 50
+                },
+                {
+                    phase: "Nage-komi (Woche 9-16)",
+                    beschreibung: "Werfen (schwierig!)",
+                    intensität: "Partner 20%",
+                    wiederholungen: 25
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Rad-Bewegung klar",
+                "Seitlich ausgeführt",
+                "Spektakulär",
+                "Technisch anspruchsvoll"
+            ]
+        }
+    },
+
+    {
+        id: "ushiro-goshi",
+        name: "Ushiro-goshi",
+        nameDE: "Hintere Hüfte / Rückwärts-Hüfte",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-gokyo (5. Gruppe)",
+        wazaTyp: "Koshi-waza (Hüftwurf)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Konter-Hüftwurf von hinten - wenn Gegner dich von hinten greift.",
+            timing: "Wenn von hinten gegriffen/angegriffen",
+            richtung: "Vorwärts über Hüfte (vom Konter)",
+            kuzushi: "Vorwärts",
+            tsukuri: "Hüfte zurück gegen Gegner, Arme kontrollieren",
+            kake: "Beuge vor, wirf über Hüfte"
+        },
+
+        schlüsselpunkte: [
+            "Ushiro = hinten/rückwärts",
+            "Konter-Technik von hinten",
+            "Wichtig für Selbstverteidigung",
+            "Gegner greift von hinten",
+            "Ungewöhnliche Situation im Sport-Judo",
+            "Nützlich zu kennen"
+        ],
+
+        fehler: [
+            "❌ Keine Kontrolle von hinten → Schwierig",
+            "❌ Schlechte Hüftposition → Ineffektiv",
+            "❌ Nicht an Situation gewöhnt → Ungewöhnlich",
+            "❌ Zu steif → Braucht Flexibilität",
+            "❌ Arme nicht kontrolliert → Verliert Griff"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Rückwärts-Hüft-Bewegung",
+                    beschreibung: "Simuliere Hüfte nach hinten",
+                    dauer: "8 Min",
+                    wiederholungen: "40x",
+                    fokus: "Ungewöhnliche Richtung"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Setup (Woche 1-4)",
+                    beschreibung: "Partner greift von hinten",
+                    intensität: "Partner sehr passiv",
+                    wiederholungen: 50
+                },
+                {
+                    phase: "Anwendung (Woche 5-12)",
+                    beschreibung: "Konter üben",
+                    intensität: "Partner 30%",
+                    wiederholungen: 30
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Situation von hinten klar",
+                "Hüft-Wurf erkennbar",
+                "Technisch sauber",
+                "Ungewöhnlich aber wichtig"
+            ]
+        }
+    },
+
+    {
+        id: "ura-nage",
+        name: "Ura-nage",
+        nameDE: "Rückwärts-Wurf",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-gokyo (5. Gruppe)",
+        wazaTyp: "Ma-sutemi-waza (Rückwärtige Opfertechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Wirf dich rückwärts und schleuder Gegner über dich mit Kraft.",
+            timing: "Wenn Gegner um Taille greift oder sehr nahe ist",
+            richtung: "Rückwärts-hoch über dich",
+            kuzushi: "Hoch",
+            tsukuri: "Greife um Taille, bereite rückwärtigen Fall",
+            kake: "Falle rückwärts + hebe + schleudere"
+        },
+
+        schlüsselpunkte: [
+            "Ura = Rückseite/hinten",
+            "Sehr kraftvoller Wurf",
+            "Rückwärtige Opfertechnik",
+            "ACHTUNG: Kann gefährlich sein!",
+            "Spektakulär",
+            "Braucht Kraft und Mut"
+        ],
+
+        fehler: [
+            "❌ GEFAHR: Kopf/Nacken-Verletzung möglich!",
+            "❌ Zu hoch werfen → Gefährlich",
+            "❌ Schlechte Kontrolle → Sehr gefährlich",
+            "❌ Auf hartem Boden → NIEMALS!",
+            "❌ Ohne Erfahrung → Nur mit Trainer!"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Rückwärts-Fall (SICHER!)",
+                    beschreibung: "Übe sicheres Rückwärts-Fallen",
+                    dauer: "10 Min",
+                    wiederholungen: "20x",
+                    fokus: "SICHERHEIT!"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Nur mit Trainer! (Woche 1-10)",
+                    beschreibung: "Langsam aufbauen",
+                    intensität: "Partner sehr passiv",
+                    wiederholungen: 30
+                },
+                {
+                    phase: "Fortgeschritten (Woche 11-20)",
+                    beschreibung: "NUR mit Erfahrung!",
+                    intensität: "Partner 15%",
+                    wiederholungen: 15
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "SICHER für beide!",
+                "Kontrolliert ausführen",
+                "Kraftvoll aber sicher",
+                "Nur zeigen wenn sehr sicher"
+            ]
+        }
+    },
+
+    {
+        id: "sumi-otoshi",
+        name: "Sumi-otoshi",
+        nameDE: "Eckensturz",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-gokyo (5. Gruppe)",
+        wazaTyp: "Te-waza (Handtechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Ziehe Gegner zur Ecke (Sumi) und lasse ihn fallen - reine Handtechnik.",
+            timing: "Wenn Gegner in Bewegung zur Ecke",
+            richtung: "Diagonal zur Ecke",
+            kuzushi: "Diagonal-rückwärts zur Ecke",
+            tsukuri: "Seitlich ausweichen, Hände zur Ecke ziehen",
+            kake: "Ziehe zur Ecke, nur mit Händen"
+        },
+
+        schlüsselpunkte: [
+            "Sumi = Ecke, Otoshi = Sturz",
+            "Reine Te-waza (Handtechnik)",
+            "KEINE Beine, KEINE Hüfte",
+            "Diagonal zur Ecke",
+            "Ähnlich Uki-otoshi aber zur Ecke",
+            "Sehr technisch"
+        ],
+
+        fehler: [
+            "❌ Bein oder Hüfte benutzen → Falsche Technik",
+            "❌ Nicht zur Ecke → Name ist 'Sumi'!",
+            "❌ Schlechter Kuzushi → Funktioniert nicht",
+            "❌ Kraft statt Technik → Muss technisch sein",
+            "❌ Verwechslung mit Uki-otoshi"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Diagonale Zieh-Bewegung",
+                    beschreibung: "Übe Ziehen zur Ecke",
+                    dauer: "10 Min",
+                    wiederholungen: "60x beide Seiten",
+                    fokus: "Diagonal, nur Hände"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Kuzushi-Training (Woche 1-8)",
+                    beschreibung: "Perfekter Kuzushi zur Ecke",
+                    intensität: "Partner passiv",
+                    wiederholungen: 90
+                },
+                {
+                    phase: "Anwendung (Woche 9-20)",
+                    beschreibung: "Versuchen anzuwenden",
+                    intensität: "Partner 40%",
+                    wiederholungen: 45
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Zur Ecke werfen",
+                "Reine Handtechnik",
+                "Keine Beine/Hüfte",
+                "Sehr technisch"
+            ]
+        }
+    },
+
+    {
+        id: "yoko-gake",
+        name: "Yoko-gake",
+        nameDE: "Seitliches Haken",
+        kategorie: "Nage-waza",
+        gruppe: "Dai-gokyo (5. Gruppe)",
+        wazaTyp: "Yoko-sutemi-waza (Seitliche Opfertechnik)",
+        videoUrl: "",
+
+        beschreibung: {
+            grundprinzip: "Hake Gegners Bein seitlich während du dich seitlich wirfst.",
+            timing: "Wenn Gegner seitlich bewegt",
+            richtung: "Seitlich",
+            kuzushi: "Seitlich",
+            tsukuri: "Bein hakt seitlich, bereite Fall",
+            kake: "Falle seitlich + hake + ziehe"
+        },
+
+        schlüsselpunkte: [
+            "Yoko = seitlich, Gake = haken",
+            "Seitliche Opfertechnik mit Haken",
+            "Kombination aus Haken + Fall",
+            "Dynamisch",
+            "Gutes Timing wichtig",
+            "Spektakulär wenn gut"
+        ],
+
+        fehler: [
+            "❌ Nicht seitlich → Richtung wichtig",
+            "❌ Kein Haken → Name ist 'Gake'!",
+            "❌ Zu zaghaft → Muss committed sein",
+            "❌ Falsches Timing → Ineffektiv",
+            "❌ Schlechte Koordination"
+        ],
+
+        training: {
+            solo: [
+                {
+                    übung: "Seitliches Haken + Fall",
+                    beschreibung: "Koordination üben",
+                    dauer: "10 Min",
+                    wiederholungen: "40x pro Seite",
+                    fokus: "Haken + Fall synchron"
+                }
+            ],
+            mitPartner: [
+                {
+                    phase: "Uchi-komi (Woche 1-6)",
+                    beschreibung: "Bewegung lernen",
+                    intensität: "Partner passiv",
+                    wiederholungen: 60
+                },
+                {
+                    phase: "Nage-komi (Woche 7-14)",
+                    beschreibung: "Werfen",
+                    intensität: "Partner 25%",
+                    wiederholungen: 30
+                }
+            ]
+        },
+
+        prüfung: {
+            niveaustufe: 5,
+            anforderungen: [
+                "Seitlich ausgeführt",
+                "Haken sichtbar",
+                "Saubere Opfertechnik",
+                "Gute Koordination"
+            ]
+        }
+    }
+];
+
+// Kombiniere alle Gruppen
+const NAGE_WAZA = [
+    ...DAI_IKKYO,
+    ...DAI_NIKYO,
+    ...DAI_SANKYO,
+    ...DAI_YONKYO,
+    ...DAI_GOKYO
+];
+
+// Export
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { NAGE_WAZA, DAI_IKKYO, DAI_NIKYO, DAI_SANKYO, DAI_YONKYO, DAI_GOKYO };
+}
