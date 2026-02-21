@@ -36,15 +36,205 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Funktion um Detailseite für Technik anzuzeigen
+    function showTechniqueDetail(techniqueId) {
+        // Finde Technik in Datenbank
+        let technique = null;
+
+        // Suche in Osaekomi-waza
+        if (typeof OSAEKOMI_WAZA !== 'undefined') {
+            technique = OSAEKOMI_WAZA.find(t => t.id === techniqueId);
+        }
+
+        // Suche in Kansetsu-waza
+        if (!technique && typeof KANSETSU_WAZA !== 'undefined') {
+            technique = KANSETSU_WAZA.find(t => t.id === techniqueId);
+        }
+
+        // Suche in Shime-waza
+        if (!technique && typeof SHIME_WAZA !== 'undefined') {
+            technique = SHIME_WAZA.find(t => t.id === techniqueId);
+        }
+
+        if (!technique) {
+            console.log('Technik noch nicht in Datenbank:', techniqueId);
+            return;
+        }
+
+        // Generiere Detailseite
+        const detailHTML = generateTechniqueDetailPage(technique);
+
+        // Erstelle oder update Detailsektion
+        let detailSection = document.getElementById(`detail-${techniqueId}`);
+        if (!detailSection) {
+            detailSection = document.createElement('section');
+            detailSection.id = `detail-${techniqueId}`;
+            detailSection.className = 'section';
+            document.querySelector('.container').appendChild(detailSection);
+        }
+        detailSection.innerHTML = detailHTML;
+
+        // Zeige Detailseite
+        sections.forEach(s => s.classList.remove('active'));
+        detailSection.classList.add('active');
+
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Setup zurück-Button
+        const backButton = detailSection.querySelector('.btn-back');
+        if (backButton) {
+            backButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                detailSection.classList.remove('active');
+                document.getElementById('katame').classList.add('active');
+            });
+        }
+    }
+
+    // Generiere HTML für Technik-Detailseite
+    function generateTechniqueDetailPage(tech) {
+        return `
+            <div class="technique-detail">
+                <div class="technique-header">
+                    <h2>${tech.name}</h2>
+                    <span class="technique-type">${tech.kategorie}</span>
+                </div>
+                <p class="technique-subtitle">${tech.nameDE}</p>
+
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <p>Video-Demonstration: ${tech.name}</p>
+                        <p class="small-text">[Hier wird das YouTube/Vimeo Video eingebettet]</p>
+                    </div>
+                </div>
+
+                <div class="technique-content">
+                    <div class="description-box">
+                        <h3>Technische Beschreibung</h3>
+                        <div class="technique-steps">
+                            <div class="step">
+                                <h4>Position</h4>
+                                <p>${tech.beschreibung.position}</p>
+                            </div>
+                            <div class="step">
+                                <h4>Kontrolle</h4>
+                                <ul>
+                                    ${tech.beschreibung.kontrolle.map(k => `<li>${k}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="step">
+                                <h4>Beinarbeit</h4>
+                                <ul>
+                                    ${tech.beschreibung.beinarbeit.map(b => `<li>${b}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="step">
+                                <h4>Schlüsselpunkte</h4>
+                                <ul>
+                                    ${tech.beschreibung.schlüsselpunkte.map(s => `<li>${s}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tips-box">
+                        <h3>Häufige Fehler</h3>
+                        <ul class="error-list">
+                            ${tech.fehler.map(f => `<li>${f}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div class="application-box">
+                        <h3>Anwendung aus Standardsituationen</h3>
+                        ${tech.situationen.map(sit => `
+                            <div class="application-item">
+                                <h4>${sit.name}</h4>
+                                <p><strong>Ausgangsposition:</strong> ${sit.position}</p>
+                                <ol>
+                                    ${sit.schritte.map(s => `<li>${s}</li>`).join('')}
+                                </ol>
+                                <p class="detail-text"><em>${sit.details}</em></p>
+                                <div class="video-placeholder small">Video: ${sit.name}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div class="training-box">
+                        <h3>Übungsvarianten</h3>
+
+                        <div class="practice-section">
+                            <h4>Mit Partner</h4>
+                            ${tech.training.mitPartner.map(phase => `
+                                <div class="training-phase">
+                                    <h5>${phase.phase}</h5>
+                                    <ul>
+                                        <li><strong>Intensität:</strong> ${phase.intensität}</li>
+                                        <li><strong>Dauer:</strong> ${phase.dauer}</li>
+                                        <li><strong>Sets:</strong> ${phase.sets}</li>
+                                        <li><strong>Fokus:</strong> ${phase.fokus}</li>
+                                        <li><strong>Wiederholungen:</strong> ${phase.wiederholungen}</li>
+                                    </ul>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <div class="practice-section">
+                            <h4>Solo-Training (täglich zuhause)</h4>
+                            ${tech.training.solo.map(übung => `
+                                <div class="solo-exercise">
+                                    <h5>${übung.übung}</h5>
+                                    <p>${übung.beschreibung}</p>
+                                    <ul>
+                                        <li><strong>Dauer:</strong> ${übung.dauer}</li>
+                                        <li><strong>Wiederholungen:</strong> ${übung.wiederholungen}</li>
+                                        <li><strong>Fokus:</strong> ${übung.fokus}</li>
+                                    </ul>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="exam-tips-box">
+                        <h3>Prüfungsrelevante Details (Niveaustufe ${tech.prüfung.niveaustufe})</h3>
+                        <ul>
+                            ${tech.prüfung.anforderungen.map(a => `<li>${a}</li>`).join('')}
+                        </ul>
+                        <h4>Prüfungstipps</h4>
+                        <ul>
+                            ${tech.prüfung.tipps.map(t => `<li>${t}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    ${tech.varianten && tech.varianten.length > 0 ? `
+                        <div class="variants-box">
+                            <h3>Varianten</h3>
+                            ${tech.varianten.map(v => `
+                                <div class="variant-item">
+                                    <h4>${v.name}</h4>
+                                    <p><strong>Unterschied:</strong> ${v.unterschied}</p>
+                                    <p><strong>Wann verwenden:</strong> ${v.wann}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+
+                    <div class="navigation-buttons">
+                        <a href="#katame" class="btn btn-secondary btn-back">← Zurück zu Katame-Waza</a>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
     // Handle technique item clicks (navigate to detail page)
     const techniqueItems = document.querySelectorAll('.technique-item');
     techniqueItems.forEach(item => {
         item.addEventListener('click', function() {
             const techniqueName = this.querySelector('.technique-name').textContent;
-            // In a real implementation, this would navigate to a specific technique page
-            console.log(`Navigate to: ${techniqueName}`);
-            // For mockup, we'll show an alert
-            // alert(`Technik-Detailseite für: ${techniqueName}\n\nHier würde die vollständige Technik-Seite mit Video, Beschreibung und Übungen geladen werden.`);
+            // Konvertiere Name zu ID (z.B. "Kesa-gatame" -> "kesa-gatame")
+            const techniqueId = techniqueName.toLowerCase().replace(/\s+/g, '-');
+            showTechniqueDetail(techniqueId);
         });
     });
 

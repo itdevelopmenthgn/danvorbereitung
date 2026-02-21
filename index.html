@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Passwortschutz laden (muss als erstes sein!) -->
+    <script src="auth.js"></script>
+    <!-- Techniken-Datenbank laden -->
+    <script src="techniken-data.js"></script>
+    <script src="kansetsu-data.js"></script>
+    <script src="shime-data.js"></script>
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -42,6 +48,7 @@
                 </li>
                 <li><a href="#trainingsplan">Trainingsplan</a></li>
                 <li><a href="#pruefung">Prüfungssimulation</a></li>
+                <li><a href="#vokabeln">Vokabeln</a></li>
             </ul>
         </div>
     </nav>
@@ -63,7 +70,7 @@
                     <p class="progress-text">35% abgeschlossen</p>
                     <div class="module-stats">
                         <div class="stat">
-                            <span class="stat-number">9/24</span>
+                            <span class="stat-number">8/24</span>
                             <span class="stat-label">Techniken beherrscht</span>
                         </div>
                         <div class="stat">
@@ -118,8 +125,8 @@
             <div class="training-info">
                 <div class="info-card">
                     <h4>Nächstes Training</h4>
-                    <p class="big-text">Montag, 24.02.2026</p>
-                    <p>Schwerpunkt: Osaekomi-waza + Situationsübungen</p>
+                    <p class="big-text">Dienstag, 25.02.2026</p>
+                    <p>Schwerpunkt: 6 Techniken (2 Osaekomi + 2 Kansetsu + 2 Shime)</p>
                     <a href="#trainingsplan" class="btn btn-small">Trainingsplan ansehen</a>
                 </div>
 
@@ -152,7 +159,7 @@
             <div class="requirements-box">
                 <h4>Prüfungsanforderungen</h4>
                 <ul>
-                    <li>Alle 24 Techniken aus Grund- und Erweiterungsprogramm</li>
+                    <li>Alle 24 Techniken aus Grund- und Erweiterungsprogramm (8 Osaekomi + 8 Kansetsu + 8 Shime)</li>
                     <li>Lösungen aus 4 Standardsituationen (Bank/Bauchlage, Beinklammer, Rückenlage, Übergang Stand-Boden)</li>
                     <li>Mindestens je eine Lösung in Ober- UND Unterlage pro Situation</li>
                 </ul>
@@ -161,7 +168,7 @@
             <div class="technique-categories">
                 <div class="category-card">
                     <h3>Osaekomi-waza</h3>
-                    <p class="category-subtitle">Haltetechniken (9 Techniken)</p>
+                    <p class="category-subtitle">Haltetechniken (8 Techniken)</p>
                     <div class="technique-grid">
                         <div class="technique-item mastered">
                             <span class="technique-name">Kesa-gatame</span>
@@ -195,18 +202,18 @@
                             <span class="technique-name">Ura-gatame</span>
                             <span class="status-icon">−</span>
                         </div>
-                        <div class="technique-item">
-                            <span class="technique-name">Juji-gatame</span>
-                            <span class="status-icon">−</span>
-                        </div>
                     </div>
                     <a href="#osaekomi" class="btn btn-primary">Alle Osaekomi-waza</a>
                 </div>
 
                 <div class="category-card">
                     <h3>Kansetsu-waza</h3>
-                    <p class="category-subtitle">Gelenkhebel (7 Techniken)</p>
+                    <p class="category-subtitle">Armhebel (8 Techniken)</p>
                     <div class="technique-grid">
+                        <div class="technique-item">
+                            <span class="technique-name">Juji-gatame</span>
+                            <span class="status-icon">−</span>
+                        </div>
                         <div class="technique-item">
                             <span class="technique-name">Ude-garami</span>
                             <span class="status-icon">−</span>
@@ -492,13 +499,13 @@
 
         <!-- Trainingsplan Section -->
         <section id="trainingsplan" class="section">
-            <h2>Trainingsplan - Woche 4</h2>
-            <p class="section-subtitle">Phase 1: Katame-Waza Intensiv (80% Boden, 20% Stand)</p>
+            <h2>Trainingsplan - Woche 1</h2>
+            <p class="section-subtitle">Phase 1: Katame-Waza Intensiv - 6-Techniken-System (2 Osaekomi + 2 Kansetsu + 2 Shime)</p>
 
             <div class="week-overview">
                 <div class="training-day">
                     <div class="day-header">
-                        <h3>Training 1 - Montag</h3>
+                        <h3>Training 1 - Dienstag</h3>
                         <span class="duration">90 Minuten</span>
                     </div>
                     <div class="training-schedule">
@@ -506,42 +513,70 @@
                             <span class="time">0-15 min</span>
                             <div class="activity">
                                 <strong>Aufwärmen</strong>
-                                <p>Ukemi, Beweglichkeit, leichtes Ne-waza</p>
+                                <p>Ukemi, Beweglichkeit, Brücke, leichtes Ne-waza Bewegen</p>
                             </div>
                         </div>
                         <div class="schedule-item">
-                            <span class="time">15-35 min</span>
+                            <span class="time">15-23 min</span>
                             <div class="activity">
-                                <strong>Juji-gatame Vertiefung</strong>
-                                <p>Aus Ober- und Unterlage, verschiedene Eingangsformen</p>
+                                <strong>Osaekomi 1: Kesa-gatame</strong>
+                                <p>Bank/Bauchlage, Übergang Stand-Boden (je 10 Wdh.)</p>
                             </div>
                         </div>
                         <div class="schedule-item">
-                            <span class="time">35-55 min</span>
+                            <span class="time">23-31 min</span>
                             <div class="activity">
-                                <strong>Ude-garami + Ude-gatame</strong>
-                                <p>Technische Übungen, Übergänge</p>
+                                <strong>Osaekomi 2: Yoko-shiho-gatame</strong>
+                                <p>Beinklammer, Rückenlage (je 10 Wdh.)</p>
                             </div>
                         </div>
                         <div class="schedule-item">
-                            <span class="time">55-75 min</span>
+                            <span class="time">31-39 min</span>
                             <div class="activity">
-                                <strong>Situationsübung: Rückenlage</strong>
-                                <p>Partner zwischen den Beinen - Escape und Konter</p>
+                                <strong>Kansetsu 1: Juji-gatame</strong>
+                                <p>Aus Oberlage, aus Unterlage, Übergang von Kesa (je 8 Wdh.)</p>
                             </div>
                         </div>
                         <div class="schedule-item">
-                            <span class="time">75-85 min</span>
+                            <span class="time">39-47 min</span>
+                            <div class="activity">
+                                <strong>Kansetsu 2: Ude-garami</strong>
+                                <p>Aus Oberlage, aus Unterlage, Übergang von Yoko-shiho (je 8 Wdh.)</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">47-56 min</span>
+                            <div class="activity">
+                                <strong>Shime 1: Hadaka-jime</strong>
+                                <p>Von hinten, aus Turtle, Übergang von Kami-shiho (je 8 Wdh.)</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">56-65 min</span>
+                            <div class="activity">
+                                <strong>Shime 2: Okuri-eri-jime</strong>
+                                <p>Von hinten klassisch, aus Turtle, aus Wurf (je 8 Wdh.)</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">65-80 min</span>
+                            <div class="activity">
+                                <strong>Situationsübung: Bank/Bauchlage</strong>
+                                <p>Verschiedene Techniken aus dieser Situation (Partner wechseln)</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">80-85 min</span>
                             <div class="activity">
                                 <strong>Ne-waza Randori</strong>
-                                <p>3x3 Minuten mit Fokus auf Kansetsu-waza</p>
+                                <p>1x5 min leicht (60% Intensität)</p>
                             </div>
                         </div>
                         <div class="schedule-item">
                             <span class="time">85-90 min</span>
                             <div class="activity">
                                 <strong>Cool-down</strong>
-                                <p>Stretching, Feedback</p>
+                                <p>Stretching, Feedback, Technik-Besprechung</p>
                             </div>
                         </div>
                     </div>
@@ -549,7 +584,7 @@
 
                 <div class="training-day">
                     <div class="day-header">
-                        <h3>Training 2 - Donnerstag</h3>
+                        <h3>Training 2 - Freitag</h3>
                         <span class="duration">90 Minuten</span>
                     </div>
                     <div class="training-schedule">
@@ -557,41 +592,70 @@
                             <span class="time">0-15 min</span>
                             <div class="activity">
                                 <strong>Aufwärmen</strong>
-                                <p>Tai-sabaki, leichtes Uchi-komi</p>
+                                <p>Ukemi, Tai-sabaki, leichtes Uchi-komi (O-goshi, Seoi-nage)</p>
                             </div>
                         </div>
                         <div class="schedule-item">
-                            <span class="time">15-35 min</span>
+                            <span class="time">15-23 min</span>
                             <div class="activity">
-                                <strong>Nage-waza Erhaltung</strong>
-                                <p>O-goshi, Seoi-nage, Uchi-mata - Uchi-komi</p>
+                                <strong>Osaekomi 3: Tate-shiho-gatame</strong>
+                                <p>Übergang Stand-Boden, Guard Pass zu Mount (je 10 Wdh.)</p>
                             </div>
                         </div>
                         <div class="schedule-item">
-                            <span class="time">35-55 min</span>
+                            <span class="time">23-31 min</span>
                             <div class="activity">
-                                <strong>Übergang Stand-Boden</strong>
-                                <p>Nach Wurf sofort Katame-waza ansetzen</p>
+                                <strong>Osaekomi 4: Kami-shiho-gatame</strong>
+                                <p>Turtle Flip, Stack Pass, aus Yoko-shiho (je 10 Wdh.)</p>
                             </div>
                         </div>
                         <div class="schedule-item">
-                            <span class="time">55-75 min</span>
+                            <span class="time">31-39 min</span>
                             <div class="activity">
-                                <strong>Kombiniertes Randori</strong>
-                                <p>Start im Stand, weiter im Boden - 5x3 Minuten</p>
+                                <strong>Kansetsu 3: Ude-gatame</strong>
+                                <p>Aus Oberlage, aus Unterlage, Übergang von Tate-shiho (je 8 Wdh.)</p>
                             </div>
                         </div>
                         <div class="schedule-item">
-                            <span class="time">75-85 min</span>
+                            <span class="time">39-47 min</span>
                             <div class="activity">
-                                <strong>Technik-Review</strong>
-                                <p>Schwache Techniken nochmal üben</p>
+                                <strong>Kansetsu 4: Waki-gatame</strong>
+                                <p>Aus Stand, Übergang Stand-Boden, als Konter (je 8 Wdh.)</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">47-56 min</span>
+                            <div class="activity">
+                                <strong>Shime 3: Gyaku-juji-jime</strong>
+                                <p>Aus Mount/Kesa, aus Guard, Griffvarianten (je 8 Wdh.)</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">56-65 min</span>
+                            <div class="activity">
+                                <strong>Shime 4: Kata-ha-jime</strong>
+                                <p>Von hinten/seitlich, aus Turtle, aus Osaekomi (je 8 Wdh.)</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">65-80 min</span>
+                            <div class="activity">
+                                <strong>Übergangs-Training</strong>
+                                <p>Osaekomi → Kansetsu → Shime (fließende Kombinationen)</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">80-85 min</span>
+                            <div class="activity">
+                                <strong>Ne-waza Randori</strong>
+                                <p>1x5 min mittel (70% Intensität)</p>
                             </div>
                         </div>
                         <div class="schedule-item">
                             <span class="time">85-90 min</span>
                             <div class="activity">
                                 <strong>Cool-down</strong>
+                                <p>Stretching, Video-Analyse (wenn möglich)</p>
                             </div>
                         </div>
                     </div>
@@ -599,45 +663,46 @@
             </div>
 
             <div class="home-training">
-                <h3>Heimtraining (täglich 30 Minuten)</h3>
+                <h3>Heimtraining Woche 1 (täglich 30 Minuten)</h3>
                 <div class="home-schedule">
                     <div class="home-day">
-                        <h4>Montag - Ruhetag</h4>
-                        <p>Leichtes Stretching, Visualisierung</p>
+                        <h4>Montag</h4>
+                        <ul>
+                            <li>Leichtes Stretching (10 min)</li>
+                            <li>Visualisierung aller Techniken (10 min)</li>
+                            <li>Video-Studium Katame-waza (10 min)</li>
+                        </ul>
                     </div>
                     <div class="home-day">
-                        <h4>Dienstag</h4>
-                        <ul>
-                            <li>Solo-Drills Juji-gatame (10 min)</li>
-                            <li>Ellenbogen/Handgelenk Mobilität (10 min)</li>
-                            <li>Mentale Visualisierung Kansetsu (10 min)</li>
-                        </ul>
+                        <h4>Dienstag - Nach Training</h4>
+                        <p>Ruhetag - Regeneration</p>
                     </div>
                     <div class="home-day">
                         <h4>Mittwoch</h4>
                         <ul>
-                            <li>Uchi-komi mit Gürtel: O-goshi, Seoi-nage (15 min)</li>
-                            <li>Tai-sabaki Übungen (10 min)</li>
-                            <li>Video-Studium Nage-waza (5 min)</li>
+                            <li>Solo-Drills: Kesa, Yoko-shiho (15 min)</li>
+                            <li>Hüftbeweglichkeit (10 min)</li>
+                            <li>Visualisierung der 6 Techniken (5 min)</li>
                         </ul>
                     </div>
                     <div class="home-day">
-                        <h4>Donnerstag - Ruhetag</h4>
-                        <p>Leichtes Stretching</p>
-                    </div>
-                    <div class="home-day">
-                        <h4>Freitag</h4>
+                        <h4>Donnerstag</h4>
                         <ul>
-                            <li>Wiederholung alle Osaekomi solo (15 min)</li>
-                            <li>Hüftbeweglichkeit intensiv (10 min)</li>
-                            <li>Prüfungssimulation mental (5 min)</li>
+                            <li>Juji-gatame & Ude-garami Bewegungen (15 min)</li>
+                            <li>Ellenbogen/Handgelenk Mobilität (10 min)</li>
+                            <li>Video-Studium Kansetsu-waza (5 min)</li>
                         </ul>
+                    </div>
+                    <div class="home-day">
+                        <h4>Freitag - Nach Training</h4>
+                        <p>Ruhetag - Regeneration</p>
                     </div>
                     <div class="home-day">
                         <h4>Samstag</h4>
                         <ul>
-                            <li>Freies Training nach Bedarf (20 min)</li>
-                            <li>Video-Aufnahme eigener Techniken (10 min)</li>
+                            <li>Hadaka-jime & Okuri-eri-jime Griffe üben (15 min)</li>
+                            <li>Nacken- und Schulter-Mobilität (10 min)</li>
+                            <li>Mentale Wiederholung aller 12 Techniken (5 min)</li>
                         </ul>
                     </div>
                     <div class="home-day">
@@ -646,6 +711,345 @@
                             <li>Aktive Erholung: Yoga/Stretching (20 min)</li>
                             <li>Wochenplanung und Zielsetzung (10 min)</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vokabeln Section -->
+        <section id="vokabeln" class="section">
+            <h2>Japanisch-Deutsch Vokabeln</h2>
+            <p class="section-subtitle">Alle wichtigen Begriffe aus den Judo-Techniken erklärt</p>
+
+            <div class="vocabulary-container">
+                <!-- Allgemeine Begriffe -->
+                <div class="vocab-category">
+                    <h3>Allgemeine Begriffe</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Waza</span>
+                            <span class="vocab-de">技</span>
+                            <span class="vocab-meaning">Technik</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Gatame</span>
+                            <span class="vocab-de">固</span>
+                            <span class="vocab-meaning">Halte-/Festhaltetechnik, fixieren</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Jime</span>
+                            <span class="vocab-de">絞</span>
+                            <span class="vocab-meaning">Würgen, Würgetechnik</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Nage</span>
+                            <span class="vocab-de">投</span>
+                            <span class="vocab-meaning">Werfen, Wurf</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Katame</span>
+                            <span class="vocab-de">固</span>
+                            <span class="vocab-meaning">Festhalten, Bodenkampf</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Osaekomi</span>
+                            <span class="vocab-de">押込</span>
+                            <span class="vocab-meaning">Niederdrücken, Haltegriff</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Kansetsu</span>
+                            <span class="vocab-de">関節</span>
+                            <span class="vocab-meaning">Gelenk, Gelenkhebel</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Shime</span>
+                            <span class="vocab-de">絞</span>
+                            <span class="vocab-meaning">Würgen, erwürgen</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Richtungen und Positionen -->
+                <div class="vocab-category">
+                    <h3>Richtungen & Positionen</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Kami</span>
+                            <span class="vocab-de">上</span>
+                            <span class="vocab-meaning">Oben, oberer Teil</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Yoko</span>
+                            <span class="vocab-de">横</span>
+                            <span class="vocab-meaning">Seite, seitlich</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Tate</span>
+                            <span class="vocab-de">縦</span>
+                            <span class="vocab-meaning">Längs, vertikal, gerade</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Ushiro</span>
+                            <span class="vocab-de">後</span>
+                            <span class="vocab-meaning">Hinten, rückwärts</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Ura</span>
+                            <span class="vocab-de">裏</span>
+                            <span class="vocab-meaning">Rückseite, umgekehrt</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Gyaku</span>
+                            <span class="vocab-de">逆</span>
+                            <span class="vocab-meaning">Umgekehrt, entgegengesetzt</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Mae</span>
+                            <span class="vocab-de">前</span>
+                            <span class="vocab-meaning">Vorne, vorwärts</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Körperteile -->
+                <div class="vocab-category">
+                    <h3>Körperteile</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Ude</span>
+                            <span class="vocab-de">腕</span>
+                            <span class="vocab-meaning">Arm</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Hiza</span>
+                            <span class="vocab-de">膝</span>
+                            <span class="vocab-meaning">Knie</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Ashi</span>
+                            <span class="vocab-de">足</span>
+                            <span class="vocab-meaning">Fuß, Bein</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Kata</span>
+                            <span class="vocab-de">肩</span>
+                            <span class="vocab-meaning">Schulter</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Hara</span>
+                            <span class="vocab-de">腹</span>
+                            <span class="vocab-meaning">Bauch</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Koshi</span>
+                            <span class="vocab-de">腰</span>
+                            <span class="vocab-meaning">Hüfte, Becken</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Waki</span>
+                            <span class="vocab-de">脇</span>
+                            <span class="vocab-meaning">Achsel, Seite</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Ha</span>
+                            <span class="vocab-de">羽</span>
+                            <span class="vocab-meaning">Flügel, Seite (bei Kata-ha: eine Seite)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gi-Teile und Griffe -->
+                <div class="vocab-category">
+                    <h3>Gi-Teile & Griffe</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Kesa</span>
+                            <span class="vocab-de">袈裟</span>
+                            <span class="vocab-meaning">Schärpe (wie Mönchsgewand), diagonal</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Eri</span>
+                            <span class="vocab-de">襟</span>
+                            <span class="vocab-meaning">Kragen</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Sode</span>
+                            <span class="vocab-de">袖</span>
+                            <span class="vocab-meaning">Ärmel</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Okuri</span>
+                            <span class="vocab-de">送</span>
+                            <span class="vocab-meaning">Schieben, gleiten lassen</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Hadaka</span>
+                            <span class="vocab-de">裸</span>
+                            <span class="vocab-meaning">Nackt, bloß (ohne Gi-Griffe)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technische Begriffe -->
+                <div class="vocab-category">
+                    <h3>Technische Begriffe</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Shiho</span>
+                            <span class="vocab-de">四方</span>
+                            <span class="vocab-meaning">Vier Ecken/Richtungen</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Juji</span>
+                            <span class="vocab-de">十字</span>
+                            <span class="vocab-meaning">Kreuz, gekreuzt</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Sankaku</span>
+                            <span class="vocab-de">三角</span>
+                            <span class="vocab-meaning">Dreieck</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Guruma</span>
+                            <span class="vocab-de">車</span>
+                            <span class="vocab-meaning">Rad, Wheel</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Garami</span>
+                            <span class="vocab-de">絡</span>
+                            <span class="vocab-meaning">Umwickeln, umschlingen</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Kuzure</span>
+                            <span class="vocab-de">崩</span>
+                            <span class="vocab-meaning">Gebrochen, modifiziert, Variante</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Uki</span>
+                            <span class="vocab-de">浮</span>
+                            <span class="vocab-meaning">Schwebend, schwimmend</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Tsukkomi</span>
+                            <span class="vocab-de">突込</span>
+                            <span class="vocab-meaning">Stoßen, hineinstoßen</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technik-Namen aufgeschlüsselt -->
+                <div class="vocab-category">
+                    <h3>Technik-Namen erklärt (Beispiele)</h3>
+                    <div class="vocab-explanations">
+                        <div class="vocab-explanation">
+                            <h4>Kesa-gatame (袈裟固)</h4>
+                            <p><strong>Kesa</strong> = Schärpe/diagonal + <strong>gatame</strong> = Haltetechnik</p>
+                            <p class="explanation-detail">→ "Schärpen-Haltegriff" - weil der Körper diagonal wie eine Mönchsschärpe liegt</p>
+                        </div>
+                        <div class="vocab-explanation">
+                            <h4>Kami-shiho-gatame (上四方固)</h4>
+                            <p><strong>Kami</strong> = oben + <strong>shiho</strong> = vier Ecken + <strong>gatame</strong> = Haltetechnik</p>
+                            <p class="explanation-detail">→ "Oberer Vier-Ecken-Haltegriff" - Kontrolle von oben über alle vier Ecken</p>
+                        </div>
+                        <div class="vocab-explanation">
+                            <h4>Juji-gatame (十字固)</h4>
+                            <p><strong>Juji</strong> = Kreuz + <strong>gatame</strong> = Festhalten</p>
+                            <p class="explanation-detail">→ "Kreuz-Armhebel" - Arme und Beine bilden ein Kreuz</p>
+                        </div>
+                        <div class="vocab-explanation">
+                            <h4>Hadaka-jime (裸絞)</h4>
+                            <p><strong>Hadaka</strong> = nackt/bloß + <strong>jime</strong> = Würgen</p>
+                            <p class="explanation-detail">→ "Nackter Würger" - ohne Gi-Griffe, nur mit den Armen</p>
+                        </div>
+                        <div class="vocab-explanation">
+                            <h4>Sankaku-jime (三角絞)</h4>
+                            <p><strong>Sankaku</strong> = Dreieck + <strong>jime</strong> = Würgen</p>
+                            <p class="explanation-detail">→ "Dreieck-Würger" - Beine bilden ein Dreieck um Hals und Arm</p>
+                        </div>
+                        <div class="vocab-explanation">
+                            <h4>Ude-garami (腕絡)</h4>
+                            <p><strong>Ude</strong> = Arm + <strong>garami</strong> = umwickeln</p>
+                            <p class="explanation-detail">→ "Armumwicklung" - der Arm wird umschlungen/verdreht</p>
+                        </div>
+                        <div class="vocab-explanation">
+                            <h4>Gyaku-juji-jime (逆十字絞)</h4>
+                            <p><strong>Gyaku</strong> = umgekehrt + <strong>juji</strong> = Kreuz + <strong>jime</strong> = Würgen</p>
+                            <p class="explanation-detail">→ "Umgekehrter Kreuzwürger" - Daumen außen statt innen</p>
+                        </div>
+                        <div class="vocab-explanation">
+                            <h4>Okuri-eri-jime (送襟絞)</h4>
+                            <p><strong>Okuri</strong> = schieben + <strong>eri</strong> = Kragen + <strong>jime</strong> = Würgen</p>
+                            <p class="explanation-detail">→ "Schiebekragen-Würger" - Kragen wird über den Hals geschoben</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prüfungs-Vokabeln -->
+                <div class="vocab-category">
+                    <h3>Prüfungs-relevante Begriffe</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Tori</span>
+                            <span class="vocab-de">取</span>
+                            <span class="vocab-meaning">Der/die Ausführende (der die Technik macht)</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Uke</span>
+                            <span class="vocab-de">受</span>
+                            <span class="vocab-meaning">Der/die Empfangende (Partner)</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Randori</span>
+                            <span class="vocab-de">乱取</span>
+                            <span class="vocab-meaning">Freies Üben, Übungskampf</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Kata</span>
+                            <span class="vocab-de">形</span>
+                            <span class="vocab-meaning">Form, festgelegte Abfolge</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Nage-no-kata</span>
+                            <span class="vocab-de">投の形</span>
+                            <span class="vocab-meaning">Form der Wurftechniken</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Katame-no-kata</span>
+                            <span class="vocab-de">固の形</span>
+                            <span class="vocab-meaning">Form der Bodentechniken</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zählungen -->
+                <div class="vocab-category">
+                    <h3>Zahlen (wichtig für Kata)</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Ichi</span>
+                            <span class="vocab-de">一</span>
+                            <span class="vocab-meaning">Eins (1)</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Ni</span>
+                            <span class="vocab-de">二</span>
+                            <span class="vocab-meaning">Zwei (2)</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">San</span>
+                            <span class="vocab-de">三</span>
+                            <span class="vocab-meaning">Drei (3)</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Shi / Yon</span>
+                            <span class="vocab-de">四</span>
+                            <span class="vocab-meaning">Vier (4) - in "shiho" = vier Ecken</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="vocab-jp">Go</span>
+                            <span class="vocab-de">五</span>
+                            <span class="vocab-meaning">Fünf (5) - in "Gokyo" = fünf Stufen</span>
+                        </div>
                     </div>
                 </div>
             </div>

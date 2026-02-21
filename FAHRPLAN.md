@@ -7,9 +7,10 @@ Dieses Programm bereitet systematisch auf die Dan-Prüfung vor, mit Schwerpunkt 
 
 ### Modul 1: Katame-Waza (AKTUELLER FOKUS)
 **Anforderungen:**
-- Alle Osaekomi-waza (9 Techniken)
-- Alle Kansetsu-waza (7 Techniken)
+- Alle Osaekomi-waza (8 Techniken)
+- Alle Kansetsu-waza (8 Techniken)
 - Alle Shime-waza (8 Techniken)
+- **Gesamt: 24 Techniken**
 - **Demonstration auf Niveaustufe 3**
 
 **Standardsituationen die beherrscht werden müssen:**
@@ -138,52 +139,245 @@ Jede Technik-Seite enthält:
 
 ---
 
-## Trainingsplan Wochen 1-4 (Katame-Waza Start)
+## Detaillierter Trainingsplan - Phase 1: Katame-Waza Intensiv
 
-### Woche 1-2: Osaekomi-Waza Grundlagen
+### 6-Techniken-System
+Pro Training werden systematisch 6 Techniken trainiert:
+- 2 Osaekomi-waza (8 gesamt)
+- 2 Kansetsu-waza (8 gesamt)
+- 2 Shime-waza (8 gesamt)
 
-#### Training 1 (90 min)
-- Aufwärmen (15 min): Ukemi, Beweglichkeit
-- Kesa-gatame + Varianten (20 min)
-- Yoko-shiho-gatame + Varianten (20 min)
-- Situationsübung: Bank/Bauchlage (20 min)
-- Ne-waza Randori light (10 min)
-- Cool-down (5 min)
+**Rotationsplan:**
+- Woche 1: 12 Techniken (Training 1 & 2)
+- Woche 2: 12 Techniken (Training 3 & 4)
+- Woche 3: Wiederholung aller 24 mit erhöhtem Widerstand
+- Woche 4: Festigung und Prüfungssimulation
 
-#### Training 2 (90 min)
-- Aufwärmen (15 min)
-- Tate-shiho-gatame (20 min)
-- Kami-shiho-gatame + Kuzure (20 min)
-- Situationsübung: Beinklammer (20 min)
-- Ne-waza Randori (10 min)
-- Cool-down (5 min)
+---
 
-#### Heimtraining (täglich 30 min)
-- Solo-Bewegungen für Kesa-gatame (10 min)
+### Woche 1
+
+#### Training 1 - Dienstag (90 min)
+
+**Aufwärmen (15 min)**
+- Ukemi-Rollen vorwärts/rückwärts
+- Brücke und Hüftbeweglichkeit
+- Leichtes Ne-waza Bewegen
+
+**6 Techniken-Block (50 min)**
+- **Osaekomi 1: Kesa-gatame** (8 min)
+  - Technische Ausführung
+  - Aus Bank/Bauchlage
+  - Aus Übergang Stand-Boden
+- **Osaekomi 2: Yoko-shiho-gatame** (8 min)
+  - Technische Ausführung
+  - Aus Beinklammer
+  - Aus Rückenlage
+- **Kansetsu 1: Juji-gatame** (8 min)
+  - Aus Oberlage (klassisch)
+  - Aus Unterlage (Closed Guard)
+  - Übergang von Kesa-gatame
+- **Kansetsu 2: Ude-garami** (8 min)
+  - Aus Oberlage (von der Seite)
+  - Aus Unterlage (Closed Guard)
+  - Übergang von Yoko-shiho-gatame
+- **Shime 1: Hadaka-jime** (9 min)
+  - Von hinten (Rückenkontrolle)
+  - Übergang von Kami-shiho-gatame
+  - Aus Turtle-Position
+- **Shime 2: Okuri-eri-jime** (9 min)
+  - Von hinten (klassisch)
+  - Aus Turtle-Position
+  - Aus gescheitertem Wurf
+
+**Situationsübung: Bank/Bauchlage (15 min)**
+- Partner in Bauchlage → zu Haltegriff drehen
+- Verschiedene Techniken testen
+
+**Ne-waza Randori (5 min)**
+- 1x5 min leicht (60% Intensität)
+
+**Cool-down (5 min)**
+
+#### Training 2 - Freitag (90 min)
+
+**Aufwärmen (15 min)**
+
+**6 Techniken-Block (50 min)**
+- **Osaekomi 3: Tate-shiho-gatame** (8 min)
+  - Technische Ausführung
+  - Aus Übergang Stand-Boden
+  - Aus Beinklammer befreit
+- **Osaekomi 4: Kami-shiho-gatame** (8 min)
+  - Technische Ausführung
+  - Aus Bank/Bauchlage
+  - Aus Rückenlage (Guard gepasst)
+- **Kansetsu 3: Ude-gatame** (8 min)
+  - Aus Oberlage (Arm gestreckt)
+  - Aus Unterlage
+  - Übergang von Tate-shiho-gatame
+- **Kansetsu 4: Waki-gatame** (8 min)
+  - Aus Stand (Armkontrolle)
+  - Aus Übergang Stand-Boden
+  - Als Konter gegen Griff
+- **Shime 3: Gyaku-juji-jime** (9 min)
+  - Aus Oberlage (Mount/Kesa)
+  - Aus Unterlage (Guard)
+  - Technische Feinheiten Griffe
+- **Shime 4: Kata-ha-jime** (9 min)
+  - Von hinten/seitlich
+  - Aus Turtle-Position
+  - Aus gescheitertem Osaekomi
+
+**Übergangs-Training (15 min)**
+- Von Haltegriff zu Armhebel
+- Von Haltegriff zu Würger
+- Fließende Kombinationen
+
+**Ne-waza Randori (5 min)**
+- 1x5 min mittel (70% Intensität)
+
+**Cool-down (5 min)**
+
+#### Heimtraining Woche 1 (täglich 30 min)
+
+**Montag - Ruhetag**
+- Leichtes Stretching (10 min)
+- Visualisierung (10 min)
+
+**Dienstag - Nach Training**
+- Ruhetag
+
+**Mittwoch**
+- Solo-Drills: Kesa, Yoko-shiho, Tate, Kami (15 min)
 - Hüftbeweglichkeit (10 min)
-- Mentale Visualisierung aller gelernten Techniken (10 min)
+- Visualisierung der 6 Techniken (5 min)
 
-### Woche 3-4: Kansetsu-Waza Einführung
+**Donnerstag**
+- Juji-gatame & Ude-garami Bewegungen (15 min)
+- Ellenbogen/Handgelenk Mobilität (10 min)
+- Video-Studium (5 min)
 
-#### Training 1 (90 min)
-- Aufwärmen (15 min)
-- Wiederholung Osaekomi (15 min)
-- Juji-gatame aus verschiedenen Positionen (25 min)
-- Ude-garami (20 min)
-- Situationsübung: Rückenlage (10 min)
-- Cool-down (5 min)
+**Freitag - Nach Training**
+- Ruhetag
 
-#### Training 2 (90 min)
-- Aufwärmen (15 min)
-- Ude-gatame + Waki-gatame (25 min)
-- Übergänge Osaekomi → Kansetsu (25 min)
-- Ne-waza Randori mit Schwerpunkt Armhebel (20 min)
-- Cool-down (5 min)
+**Samstag**
+- Hadaka-jime & Okuri-eri-jime Griffe üben (15 min)
+- Nacken- und Schulter-Mobilität (10 min)
+- Mentale Wiederholung aller 12 Techniken (5 min)
 
-#### Heimtraining (täglich 30 min)
-- Solo-Drills Juji-gatame Bewegung (10 min)
-- Handgelenk- und Ellenbogen-Mobilität (10 min)
-- Wiederholung Osaekomi mental + physisch (10 min)
+**Sonntag**
+- Aktive Erholung: Yoga/Stretching (20 min)
+- Wochenplanung (10 min)
+
+---
+
+### Woche 2
+
+#### Training 3 - Dienstag (90 min)
+
+**Aufwärmen (15 min)**
+
+**6 Techniken-Block (50 min)**
+- **Osaekomi 5: Ushiro-kesa-gatame** (8 min)
+  - Technische Ausführung
+  - Aus Rückenlage
+  - Als Übergang von Kesa-gatame
+- **Osaekomi 6: Kuzure-kami-shiho-gatame** (8 min)
+  - Technische Ausführung
+  - Aus Bank/Bauchlage
+  - Als Variation von Kami-shiho-gatame
+- **Kansetsu 5: Hiza-gatame** (8 min)
+  - Aus Oberlage
+  - Gegen Escape-Versuch
+  - Technische Details Knieposition
+- **Kansetsu 6: Sankaku-gatame (Arm)** (8 min)
+  - Aus Unterlage (Triangle-Armlock)
+  - Aus Oberlage
+  - Übergang von Juji-gatame
+- **Shime 5: Sode-guruma-jime** (9 min)
+  - Aus Oberlage
+  - Aus Unterlage (Guard)
+  - Technische Details Ärmelgriff
+- **Shime 6: Sankaku-jime** (9 min)
+  - Aus Unterlage (Triangle Choke)
+  - Übergang von Juji-gatame
+  - Technische Details Beinposition
+
+**Situationsübung: Beinklammer (15 min)**
+- Partner klammert deine Beine
+- Verschiedene Escape-Techniken
+- Übergang zu Kontrolle
+
+**Ne-waza Randori (5 min)**
+- 1x5 min mittel (75% Intensität)
+
+**Cool-down (5 min)**
+
+#### Training 4 - Freitag (90 min)
+
+**Aufwärmen (15 min)**
+
+**6 Techniken-Block (50 min)**
+- **Osaekomi 7: Uki-gatame** (8 min)
+  - Technische Ausführung
+  - Aus Übergang Stand-Boden
+  - Kombination mit Ude-gatame
+- **Osaekomi 8: Ura-gatame** (8 min)
+  - Technische Ausführung
+  - Aus Beinklammer
+  - Technische Details Rückenlage
+- **Kansetsu 7: Ashi-gatame** (8 min)
+  - Aus Oberlage
+  - Technische Details Beinposition
+  - Sicherheitsaspekte
+- **Kansetsu 8: Hara-gatame** (8 min)
+  - Aus Oberlage
+  - Über die Hüfte
+  - Technische Details Position
+- **Shime 7: Koshi-jime** (9 min)
+  - Aus Oberlage
+  - Aus Unterlage
+  - Technische Details Hüftdruck
+- **Shime 8: Tsukkomi-jime** (9 min)
+  - Aus Oberlage
+  - Technische Details Eindringen
+  - Varianten
+
+**Wiederholung: Alle Osaekomi (15 min)**
+- Schnelldurchlauf 1-9
+- Partner wechseln
+
+**Ne-waza Randori (5 min)**
+- 1x5 min intensiv (80% Intensität)
+
+**Cool-down (5 min)**
+
+#### Heimtraining Woche 2
+*(Analog zu Woche 1, mit neuen Techniken)*
+
+---
+
+### Woche 3 - Wiederholung mit Steigerung
+
+**Alle 24 Techniken nochmal durchgehen, jetzt mit:**
+- Höherem Widerstand vom Partner (70-80%)
+- Fokus auf Situationen
+- Kombinationen zwischen Techniken
+
+---
+
+### Woche 4 - Festigung und Test
+
+**Training 7 - Dienstag**
+- Freie Auswahl: Schwache Techniken intensiv üben
+- Partner gibt Feedback
+- Video-Aufnahmen machen
+
+**Training 8 - Freitag**
+- Prüfungssimulation
+- Alle Techniken unter Prüfungsbedingungen
+- Alle Situationen zeigen
 
 ---
 
@@ -198,7 +392,7 @@ Jede Technik-Seite enthält:
 ## Erfolgskriterien pro Modul
 
 ### Katame-Waza
-✓ Alle 24 Techniken sauber demonstrieren
+✓ Alle 24 Techniken sauber demonstrieren (8 Osaekomi + 8 Kansetsu + 8 Shime)
 ✓ Aus jeder Standardsituation mind. 2 Lösungen in Ober-/Unterlage
 ✓ Flüssige Übergänge zwischen Techniken
 ✓ Sicheres Abklopfen und Kontrolle
