@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dan-Vorbereitung - 1. Dan Judo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Dan-Vorbereitung</h1>
+                <span class="subtitle">1. Dan Judo</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#dashboard" class="active">Dashboard</a></li>
+                <li class="dropdown">
+                    <a href="#katame">Katame-Waza</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#osaekomi">Osaekomi-waza</a></li>
+                        <li><a href="#kansetsu">Kansetsu-waza</a></li>
+                        <li><a href="#shime">Shime-waza</a></li>
+                        <li><a href="#situationen">Standardsituationen</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#nage">Nage-Waza</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#gokyo">Gokyo-no-waza</a></li>
+                        <li><a href="#kombinationen">Kombinationen & Finten</a></li>
+                        <li><a href="#konter">Konter</a></li>
+                        <li><a href="#griffkampf">Griffkampf</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#kata">Kata</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#nage-kata">Nage-no-kata</a></li>
+                        <li><a href="#ju-kata">Ju-no-kata</a></li>
+                    </ul>
+                </li>
+                <li><a href="#trainingsplan">Trainingsplan</a></li>
+                <li><a href="#pruefung">Prüfungssimulation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <h2>Dashboard - Deine Prüfungsvorbereitung</h2>
+
+            <div class="progress-overview">
+                <div class="module-card focus">
+                    <div class="module-header">
+                        <h3>Modul 1: Katame-Waza</h3>
+                        <span class="badge current">Aktueller Fokus</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 35%"></div>
+                    </div>
+                    <p class="progress-text">35% abgeschlossen</p>
+                    <div class="module-stats">
+                        <div class="stat">
+                            <span class="stat-number">9/24</span>
+                            <span class="stat-label">Techniken beherrscht</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2/4</span>
+                            <span class="stat-label">Situationen gemeistert</span>
+                        </div>
+                    </div>
+                    <a href="#katame" class="btn btn-primary">Zum Modul</a>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Modul 2: Nage-Waza</h3>
+                        <span class="badge">Erhaltungstraining</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 15%"></div>
+                    </div>
+                    <p class="progress-text">15% abgeschlossen</p>
+                    <div class="module-stats">
+                        <div class="stat">
+                            <span class="stat-number">6/40</span>
+                            <span class="stat-label">Würfe trainiert</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">0/8</span>
+                            <span class="stat-label">Spezialaufgaben</span>
+                        </div>
+                    </div>
+                    <a href="#nage" class="btn btn-secondary">Zum Modul</a>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <h3>Modul 3: Kata</h3>
+                        <span class="badge">Geplant</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <p class="progress-text">0% abgeschlossen</p>
+                    <div class="module-stats">
+                        <div class="stat">
+                            <span class="stat-number">0/5</span>
+                            <span class="stat-label">Gruppen gelernt</span>
+                        </div>
+                    </div>
+                    <a href="#kata" class="btn btn-secondary">Zum Modul</a>
+                </div>
+            </div>
+
+            <div class="training-info">
+                <div class="info-card">
+                    <h4>Nächstes Training</h4>
+                    <p class="big-text">Montag, 24.02.2026</p>
+                    <p>Schwerpunkt: Osaekomi-waza + Situationsübungen</p>
+                    <a href="#trainingsplan" class="btn btn-small">Trainingsplan ansehen</a>
+                </div>
+
+                <div class="info-card">
+                    <h4>Heimtraining heute</h4>
+                    <p class="big-text">30 Minuten</p>
+                    <ul class="task-list">
+                        <li>✓ Solo-Drills Kesa-gatame (10 min)</li>
+                        <li>✓ Hüftbeweglichkeit (10 min)</li>
+                        <li>Mentale Visualisierung (10 min)</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h4>Woche 4 von 44</h4>
+                    <p class="big-text">Phase 1</p>
+                    <p>Katame-Waza Intensiv</p>
+                    <p class="small-text">Noch 12 Wochen in dieser Phase</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Katame-Waza Section -->
+        <section id="katame" class="section">
+            <div class="section-header">
+                <h2>Modul 1: Katame-Waza</h2>
+                <p class="section-subtitle">Bodentechniken - Demonstration auf Niveaustufe 3</p>
+            </div>
+
+            <div class="requirements-box">
+                <h4>Prüfungsanforderungen</h4>
+                <ul>
+                    <li>Alle 24 Techniken aus Grund- und Erweiterungsprogramm</li>
+                    <li>Lösungen aus 4 Standardsituationen (Bank/Bauchlage, Beinklammer, Rückenlage, Übergang Stand-Boden)</li>
+                    <li>Mindestens je eine Lösung in Ober- UND Unterlage pro Situation</li>
+                </ul>
+            </div>
+
+            <div class="technique-categories">
+                <div class="category-card">
+                    <h3>Osaekomi-waza</h3>
+                    <p class="category-subtitle">Haltetechniken (9 Techniken)</p>
+                    <div class="technique-grid">
+                        <div class="technique-item mastered">
+                            <span class="technique-name">Kesa-gatame</span>
+                            <span class="status-icon">✓</span>
+                        </div>
+                        <div class="technique-item mastered">
+                            <span class="technique-name">Yoko-shiho-gatame</span>
+                            <span class="status-icon">✓</span>
+                        </div>
+                        <div class="technique-item in-progress">
+                            <span class="technique-name">Tate-shiho-gatame</span>
+                            <span class="status-icon">○</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Kami-shiho-gatame</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Ushiro-kesa-gatame</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Kuzure-kami-shiho-gatame</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Uki-gatame</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Ura-gatame</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Juji-gatame</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                    </div>
+                    <a href="#osaekomi" class="btn btn-primary">Alle Osaekomi-waza</a>
+                </div>
+
+                <div class="category-card">
+                    <h3>Kansetsu-waza</h3>
+                    <p class="category-subtitle">Gelenkhebel (7 Techniken)</p>
+                    <div class="technique-grid">
+                        <div class="technique-item">
+                            <span class="technique-name">Ude-garami</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Waki-gatame</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Ude-gatame</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Hiza-gatame</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Sankaku-gatame</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Ashi-gatame</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Hara-gatame</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                    </div>
+                    <a href="#kansetsu" class="btn btn-primary">Alle Kansetsu-waza</a>
+                </div>
+
+                <div class="category-card">
+                    <h3>Shime-waza</h3>
+                    <p class="category-subtitle">Würgetechniken (8 Techniken)</p>
+                    <div class="technique-grid">
+                        <div class="technique-item">
+                            <span class="technique-name">Gyaku-juji-jime</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Koshi-jime</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Hadaka-jime</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Kataha-jime</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Okuri-eri-jime</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Sode-guruma-jime</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Sankaku-jime</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                        <div class="technique-item">
+                            <span class="technique-name">Tsukkomi-jime</span>
+                            <span class="status-icon">−</span>
+                        </div>
+                    </div>
+                    <a href="#shime" class="btn btn-primary">Alle Shime-waza</a>
+                </div>
+            </div>
+
+            <div class="situations-section">
+                <h3>Standardsituationen</h3>
+                <div class="situations-grid">
+                    <div class="situation-card completed">
+                        <h4>Bank/Bauchlage</h4>
+                        <div class="situation-status">
+                            <p>Oberlage: 2 Lösungen ✓</p>
+                            <p>Unterlage: 1 Lösung ✓</p>
+                        </div>
+                        <a href="#situation-bank" class="btn btn-small">Details</a>
+                    </div>
+                    <div class="situation-card in-progress">
+                        <h4>Beinklammer</h4>
+                        <div class="situation-status">
+                            <p>Oberlage: 1 Lösung ✓</p>
+                            <p>Unterlage: 0 Lösungen</p>
+                        </div>
+                        <a href="#situation-beinklammer" class="btn btn-small">Details</a>
+                    </div>
+                    <div class="situation-card">
+                        <h4>Rückenlage (Partner zw. Beinen)</h4>
+                        <div class="situation-status">
+                            <p>Oberlage: 0 Lösungen</p>
+                            <p>Unterlage: 0 Lösungen</p>
+                        </div>
+                        <a href="#situation-rueckenlage" class="btn btn-small">Details</a>
+                    </div>
+                    <div class="situation-card">
+                        <h4>Übergang Stand-Boden</h4>
+                        <div class="situation-status">
+                            <p>Oberlage: 0 Lösungen</p>
+                            <p>Unterlage: 0 Lösungen</p>
+                        </div>
+                        <a href="#situation-uebergang" class="btn btn-small">Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example Technique Detail Page -->
+        <section id="kesa-gatame-detail" class="section">
+            <div class="technique-detail">
+                <div class="technique-header">
+                    <h2>Kesa-gatame</h2>
+                    <span class="technique-type">Osaekomi-waza</span>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <p>Video-Demonstration</p>
+                        <p class="small-text">[Hier wird das YouTube/Vimeo Video eingebettet]</p>
+                    </div>
+                </div>
+
+                <div class="technique-content">
+                    <div class="description-box">
+                        <h3>Technische Beschreibung</h3>
+                        <div class="technique-steps">
+                            <div class="step">
+                                <h4>Position</h4>
+                                <p>Du sitzt seitlich neben dem Gegner, der auf dem Rücken liegt.</p>
+                            </div>
+                            <div class="step">
+                                <h4>Kontrolle</h4>
+                                <ul>
+                                    <li>Dein rechter Arm umschließt den Kopf des Gegners</li>
+                                    <li>Dein linker Arm kontrolliert den rechten Arm des Gegners</li>
+                                    <li>Deine Brust drückt auf die Brust des Gegners</li>
+                                </ul>
+                            </div>
+                            <div class="step">
+                                <h4>Beinarbeit</h4>
+                                <ul>
+                                    <li>Rechtes Bein angewinkelt und nah am Körper des Gegners</li>
+                                    <li>Linkes Bein gestreckt für Stabilität</li>
+                                    <li>Hüfte flach auf dem Boden, Gewicht auf den Gegner</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tips-box">
+                        <h3>Häufige Fehler</h3>
+                        <ul class="error-list">
+                            <li>❌ Zu wenig Druck mit der Brust → Gegner kann sich drehen</li>
+                            <li>❌ Hüfte zu hoch → Gegner kann überbrücken</li>
+                            <li>❌ Kopfkontrolle zu locker → Gegner kann aussteigen</li>
+                            <li>❌ Zu viel Gewicht auf den Armen → Verlust der Kontrolle</li>
+                        </ul>
+                    </div>
+
+                    <div class="application-box">
+                        <h3>Anwendung aus Standardsituationen</h3>
+
+                        <div class="application-item">
+                            <h4>Bank/Bauchlage (Oberlage)</h4>
+                            <ol>
+                                <li>Gegner liegt in Bauchlage</li>
+                                <li>Greife unter seinen rechten Arm</li>
+                                <li>Drehe ihn auf die rechte Seite</li>
+                                <li>Gleite in Kesa-gatame während der Drehung</li>
+                            </ol>
+                            <div class="video-placeholder small">Video: Kesa aus Bauchlage</div>
+                        </div>
+
+                        <div class="application-item">
+                            <h4>Übergang Stand-Boden (Oberlage)</h4>
+                            <ol>
+                                <li>Nach erfolgreichem Wurf sofort nachrücken</li>
+                                <li>Greife den Kopf bevor Gegner sich dreht</li>
+                                <li>Sichere den nahen Arm</li>
+                                <li>Stabilisiere die Position</li>
+                            </ol>
+                            <div class="video-placeholder small">Video: Kesa nach Wurf</div>
+                        </div>
+                    </div>
+
+                    <div class="training-box">
+                        <h3>Übungsvarianten</h3>
+
+                        <div class="practice-section">
+                            <h4>Mit Partner (20 Wiederholungen pro Training)</h4>
+                            <ol>
+                                <li><strong>Statisches Halten (Woche 1-2):</strong>
+                                    <ul>
+                                        <li>Partner liegt passiv, halte 30 Sekunden</li>
+                                        <li>Fokus auf korrekte Position</li>
+                                        <li>3 Sets à 3 Wiederholungen</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Leichter Widerstand (Woche 3-4):</strong>
+                                    <ul>
+                                        <li>Partner versucht mit 30% Kraft zu entkommen</li>
+                                        <li>Halte Position und korrigiere</li>
+                                        <li>5 Sets à 2 Wiederholungen je 45 Sekunden</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Mittlerer Widerstand (Woche 5-8):</strong>
+                                    <ul>
+                                        <li>Partner versucht mit 60% Kraft zu entkommen</li>
+                                        <li>Reaktion auf verschiedene Escape-Versuche</li>
+                                        <li>10 Wiederholungen à 60 Sekunden</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Voller Widerstand (Woche 9+):</strong>
+                                    <ul>
+                                        <li>Partner versucht aktiv zu entkommen</li>
+                                        <li>Randori-ähnliche Bedingungen</li>
+                                        <li>Integriere Übergänge zu anderen Techniken</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="practice-section">
+                            <h4>Solo-Training (täglich 10 Minuten zuhause)</h4>
+                            <ol>
+                                <li><strong>Bewegungsablauf ohne Partner:</strong>
+                                    <ul>
+                                        <li>Lege dich in Kesa-Position auf den Boden</li>
+                                        <li>Simuliere die Armbewegungen</li>
+                                        <li>Achte auf Hüftposition und Beinstellung</li>
+                                        <li>10x langsam, 10x in Wettkampfgeschwindigkeit</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Mit Kissen/Sandsack:</strong>
+                                    <ul>
+                                        <li>Platziere ein großes Kissen als Gegner-Simulation</li>
+                                        <li>Übe Einnehmen der Position</li>
+                                        <li>Fokus auf Druckausübung</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Hüftbeweglichkeit:</strong>
+                                    <ul>
+                                        <li>Hüftöffner-Dehnungen (Pigeon Pose)</li>
+                                        <li>Rotationsübungen für schnelles Positionieren</li>
+                                        <li>5 Minuten täglich</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Mentale Visualisierung:</strong>
+                                    <ul>
+                                        <li>Stelle dir vor, wie du aus verschiedenen Situationen in Kesa kommst</li>
+                                        <li>Visualisiere Gegner-Reaktionen und deine Korrekturen</li>
+                                        <li>5 Minuten vor dem Schlafengehen</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="exam-tips-box">
+                        <h3>Prüfungsrelevante Details (Niveaustufe 3)</h3>
+                        <ul>
+                            <li>✓ Perfekte Körperhaltung und maximale Kontrolle</li>
+                            <li>✓ Saubere Ausführung unter Widerstand</li>
+                            <li>✓ Demonstration aus mindestens 2 verschiedenen Situationen</li>
+                            <li>✓ Fließende Übergänge zu anderen Techniken zeigen</li>
+                            <li>✓ Korrekte japanische Bezeichnung verwenden</li>
+                            <li>✓ Sicheres Arbeiten (Partner darf nicht verletzt werden)</li>
+                        </ul>
+                    </div>
+
+                    <div class="navigation-buttons">
+                        <a href="#osaekomi" class="btn btn-secondary">← Zurück zu Osaekomi-waza</a>
+                        <a href="#yoko-shiho-gatame" class="btn btn-primary">Nächste Technik: Yoko-shiho-gatame →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trainingsplan Section -->
+        <section id="trainingsplan" class="section">
+            <h2>Trainingsplan - Woche 4</h2>
+            <p class="section-subtitle">Phase 1: Katame-Waza Intensiv (80% Boden, 20% Stand)</p>
+
+            <div class="week-overview">
+                <div class="training-day">
+                    <div class="day-header">
+                        <h3>Training 1 - Montag</h3>
+                        <span class="duration">90 Minuten</span>
+                    </div>
+                    <div class="training-schedule">
+                        <div class="schedule-item">
+                            <span class="time">0-15 min</span>
+                            <div class="activity">
+                                <strong>Aufwärmen</strong>
+                                <p>Ukemi, Beweglichkeit, leichtes Ne-waza</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">15-35 min</span>
+                            <div class="activity">
+                                <strong>Juji-gatame Vertiefung</strong>
+                                <p>Aus Ober- und Unterlage, verschiedene Eingangsformen</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">35-55 min</span>
+                            <div class="activity">
+                                <strong>Ude-garami + Ude-gatame</strong>
+                                <p>Technische Übungen, Übergänge</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">55-75 min</span>
+                            <div class="activity">
+                                <strong>Situationsübung: Rückenlage</strong>
+                                <p>Partner zwischen den Beinen - Escape und Konter</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">75-85 min</span>
+                            <div class="activity">
+                                <strong>Ne-waza Randori</strong>
+                                <p>3x3 Minuten mit Fokus auf Kansetsu-waza</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">85-90 min</span>
+                            <div class="activity">
+                                <strong>Cool-down</strong>
+                                <p>Stretching, Feedback</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="training-day">
+                    <div class="day-header">
+                        <h3>Training 2 - Donnerstag</h3>
+                        <span class="duration">90 Minuten</span>
+                    </div>
+                    <div class="training-schedule">
+                        <div class="schedule-item">
+                            <span class="time">0-15 min</span>
+                            <div class="activity">
+                                <strong>Aufwärmen</strong>
+                                <p>Tai-sabaki, leichtes Uchi-komi</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">15-35 min</span>
+                            <div class="activity">
+                                <strong>Nage-waza Erhaltung</strong>
+                                <p>O-goshi, Seoi-nage, Uchi-mata - Uchi-komi</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">35-55 min</span>
+                            <div class="activity">
+                                <strong>Übergang Stand-Boden</strong>
+                                <p>Nach Wurf sofort Katame-waza ansetzen</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">55-75 min</span>
+                            <div class="activity">
+                                <strong>Kombiniertes Randori</strong>
+                                <p>Start im Stand, weiter im Boden - 5x3 Minuten</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">75-85 min</span>
+                            <div class="activity">
+                                <strong>Technik-Review</strong>
+                                <p>Schwache Techniken nochmal üben</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">85-90 min</span>
+                            <div class="activity">
+                                <strong>Cool-down</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-training">
+                <h3>Heimtraining (täglich 30 Minuten)</h3>
+                <div class="home-schedule">
+                    <div class="home-day">
+                        <h4>Montag - Ruhetag</h4>
+                        <p>Leichtes Stretching, Visualisierung</p>
+                    </div>
+                    <div class="home-day">
+                        <h4>Dienstag</h4>
+                        <ul>
+                            <li>Solo-Drills Juji-gatame (10 min)</li>
+                            <li>Ellenbogen/Handgelenk Mobilität (10 min)</li>
+                            <li>Mentale Visualisierung Kansetsu (10 min)</li>
+                        </ul>
+                    </div>
+                    <div class="home-day">
+                        <h4>Mittwoch</h4>
+                        <ul>
+                            <li>Uchi-komi mit Gürtel: O-goshi, Seoi-nage (15 min)</li>
+                            <li>Tai-sabaki Übungen (10 min)</li>
+                            <li>Video-Studium Nage-waza (5 min)</li>
+                        </ul>
+                    </div>
+                    <div class="home-day">
+                        <h4>Donnerstag - Ruhetag</h4>
+                        <p>Leichtes Stretching</p>
+                    </div>
+                    <div class="home-day">
+                        <h4>Freitag</h4>
+                        <ul>
+                            <li>Wiederholung alle Osaekomi solo (15 min)</li>
+                            <li>Hüftbeweglichkeit intensiv (10 min)</li>
+                            <li>Prüfungssimulation mental (5 min)</li>
+                        </ul>
+                    </div>
+                    <div class="home-day">
+                        <h4>Samstag</h4>
+                        <ul>
+                            <li>Freies Training nach Bedarf (20 min)</li>
+                            <li>Video-Aufnahme eigener Techniken (10 min)</li>
+                        </ul>
+                    </div>
+                    <div class="home-day">
+                        <h4>Sonntag</h4>
+                        <ul>
+                            <li>Aktive Erholung: Yoga/Stretching (20 min)</li>
+                            <li>Wochenplanung und Zielsetzung (10 min)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Dan-Vorbereitung 1. Dan Judo - Viel Erfolg bei deiner Prüfung!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

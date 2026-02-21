@@ -1,0 +1,796 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #c41e3a;
+    --secondary-color: #1a1a1a;
+    --accent-color: #f4f4f4;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --text-dark: #333;
+    --text-light: #666;
+    --border-color: #ddd;
+    --shadow: 0 2px 8px rgba(0,0,0,0.1);
+    --shadow-hover: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: #fafafa;
+}
+
+/* Navigation */
+.navbar {
+    background: var(--secondary-color);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+}
+
+.logo .subtitle {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background: var(--primary-color);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--secondary-color);
+    list-style: none;
+    min-width: 200px;
+    box-shadow: var(--shadow);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.8rem 1rem;
+    border-radius: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Sections */
+.section {
+    display: none;
+    animation: fadeIn 0.3s;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Progress Overview */
+.progress-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.module-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.module-card.focus {
+    border: 2px solid var(--primary-color);
+}
+
+.module-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.module-header h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badge.current {
+    background: var(--primary-color);
+    color: white;
+}
+
+.badge {
+    background: var(--accent-color);
+    color: var(--text-light);
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: var(--accent-color);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), #e53e56);
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Module Stats */
+.module-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #a01729;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+    background: var(--accent-color);
+    color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Training Info Cards */
+.training-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.info-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.big-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.small-text {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.task-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.task-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.task-list li:last-child {
+    border-bottom: none;
+}
+
+/* Requirements Box */
+.requirements-box {
+    background: #fff3cd;
+    border-left: 4px solid var(--warning-color);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+}
+
+.requirements-box h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.requirements-box ul {
+    padding-left: 1.5rem;
+}
+
+.requirements-box li {
+    margin-bottom: 0.5rem;
+}
+
+/* Technique Categories */
+.technique-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.category-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.category-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.category-subtitle {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Technique Grid */
+.technique-grid {
+    display: grid;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.technique-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background: var(--accent-color);
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.technique-item:hover {
+    background: #e8e8e8;
+    cursor: pointer;
+}
+
+.technique-item.mastered {
+    background: #d4edda;
+    border-left: 4px solid var(--success-color);
+}
+
+.technique-item.in-progress {
+    background: #fff3cd;
+    border-left: 4px solid var(--warning-color);
+}
+
+.technique-name {
+    font-weight: 500;
+}
+
+.status-icon {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.technique-item.mastered .status-icon {
+    color: var(--success-color);
+}
+
+.technique-item.in-progress .status-icon {
+    color: var(--warning-color);
+}
+
+/* Situations Section */
+.situations-section {
+    margin-top: 3rem;
+}
+
+.situations-section h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.situations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.situation-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--border-color);
+}
+
+.situation-card.completed {
+    border-left-color: var(--success-color);
+}
+
+.situation-card.in-progress {
+    border-left-color: var(--warning-color);
+}
+
+.situation-card h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.situation-status p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Technique Detail Page */
+.technique-detail {
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.technique-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.technique-header h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.technique-type {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Video Container */
+.video-container {
+    margin-bottom: 2rem;
+}
+
+.video-placeholder {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.video-placeholder.small {
+    aspect-ratio: 16/9;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Content Boxes */
+.description-box,
+.tips-box,
+.application-box,
+.training-box,
+.exam-tips-box {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.description-box {
+    background: #f8f9fa;
+}
+
+.tips-box {
+    background: #fff3cd;
+    border-left: 4px solid var(--warning-color);
+}
+
+.application-box {
+    background: #d1ecf1;
+    border-left: 4px solid #0c5460;
+}
+
+.training-box {
+    background: #d4edda;
+    border-left: 4px solid var(--success-color);
+}
+
+.exam-tips-box {
+    background: #f8d7da;
+    border-left: 4px solid var(--primary-color);
+}
+
+.description-box h3,
+.tips-box h3,
+.application-box h3,
+.training-box h3,
+.exam-tips-box h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.technique-steps {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.step h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.step ul,
+.step ol {
+    padding-left: 1.5rem;
+}
+
+.step li {
+    margin-bottom: 0.3rem;
+}
+
+.error-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.error-list li {
+    padding: 0.5rem 0;
+    font-weight: 500;
+}
+
+.application-item,
+.practice-section {
+    margin-bottom: 2rem;
+}
+
+.application-item h4,
+.practice-section h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.application-item ol,
+.practice-section ol {
+    padding-left: 1.5rem;
+}
+
+.application-item li,
+.practice-section li {
+    margin-bottom: 0.8rem;
+}
+
+.practice-section ul {
+    padding-left: 2rem;
+    margin-top: 0.5rem;
+}
+
+.practice-section ul li {
+    margin-bottom: 0.3rem;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Training Schedule */
+.week-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.training-day {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.day-header h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+.duration {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.training-schedule {
+    display: grid;
+    gap: 1rem;
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--accent-color);
+    border-radius: 6px;
+}
+
+.time {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.activity strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--secondary-color);
+}
+
+.activity p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Home Training */
+.home-training {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.home-training h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.home-schedule {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.home-day {
+    padding: 1.5rem;
+    background: var(--accent-color);
+    border-radius: 6px;
+}
+
+.home-day h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.home-day ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.home-day li {
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .progress-overview,
+    .technique-categories,
+    .situations-grid,
+    .week-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .technique-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .schedule-item {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .btn,
+    footer {
+        display: none;
+    }
+
+    .section {
+        display: block !important;
+        page-break-after: always;
+    }
+}
