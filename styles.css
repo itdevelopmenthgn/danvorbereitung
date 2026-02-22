@@ -113,6 +113,7 @@ body {
     box-shadow: var(--shadow);
     border-radius: 4px;
     margin-top: 0.5rem;
+    z-index: 1000;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -1988,4 +1989,386 @@ select {
     padding: 1rem;
     margin-top: 1rem;
     border-radius: 4px;
+}
+
+/* Standardsituationen Styles */
+.situation-overview {
+    margin-top: 2rem;
+}
+
+.situation-card-large {
+    background: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.situation-card-large h4 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.situation-description {
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.solution-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.solution-item h5 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.solution-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.solution-item ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.solution-item ul li:last-child {
+    border-bottom: none;
+}
+
+.solution-item ul li strong {
+    color: var(--secondary-color);
+    display: inline-block;
+    min-width: 150px;
+}
+
+.training-drills {
+    margin-top: 3rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.training-drills h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.exam-requirements {
+    margin-top: 3rem;
+    background: #fff3cd;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid var(--warning-color);
+}
+
+.exam-requirements h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.requirement-box {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.requirement-box:last-child {
+    margin-bottom: 0;
+}
+
+.requirement-box h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.requirement-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.requirement-box ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.requirement-box ul li:before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .solutions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .situation-card-large {
+        padding: 1.5rem;
+    }
+
+    .solution-item ul li strong {
+        display: block;
+        min-width: auto;
+        margin-bottom: 0.25rem;
+    }
+}
+
+/* Kata Styles */
+.kata-group {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-color);
+}
+
+.kata-group h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.group-description {
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.kata-technique {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.kata-technique:last-child {
+    margin-bottom: 0;
+}
+
+.kata-technique h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.kata-technique p {
+    margin-bottom: 0.8rem;
+}
+
+.kata-technique p:last-child {
+    margin-bottom: 0;
+}
+
+.kata-technique ul {
+    margin-left: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.kata-technique ul li {
+    margin-bottom: 0.4rem;
+}
+
+.kata-performance {
+    background: #e7f3ff;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    border: 2px solid #0066cc;
+}
+
+.kata-performance h3 {
+    color: #0066cc;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .kata-group, .kata-technique {
+        padding: 1rem;
+    }
+}
+
+/* Prüfungssimulation Styles */
+.exam-section-overview {
+    margin-top: 2rem;
+}
+
+.exam-part {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-color);
+}
+
+.exam-part h4 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.part-details {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.part-details p {
+    margin-bottom: 0.8rem;
+}
+
+.part-details ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.exam-simulation-checklist {
+    margin-top: 3rem;
+}
+
+.checklist-section {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.checklist-section h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.exam-tips {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.tip-card {
+    background: #fff9e6;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--warning-color);
+}
+
+.tip-card h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+}
+
+.exam-scoring {
+    margin-top: 3rem;
+    background: #e7f3ff;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid #0066cc;
+}
+
+.practice-schedule {
+    margin-top: 3rem;
+}
+
+.week-plan {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.week-plan h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.week-plan ul {
+    list-style: none;
+    padding: 0;
+}
+
+.week-plan ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.week-plan ul li:last-child {
+    border-bottom: none;
+}
+
+.week-plan ul li strong {
+    display: inline-block;
+    min-width: 40px;
+    color: var(--primary-color);
+}
+
+.motivation-box {
+    margin-top: 3rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.motivation-box h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.motivation-box .quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .exam-tips {
+        grid-template-columns: 1fr;
+    }
+
+    .exam-part, .part-details, .checklist-section, .week-plan {
+        padding: 1rem;
+    }
 }

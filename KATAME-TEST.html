@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KATAME WAZA TEST</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .result { padding: 10px; margin: 10px 0; border: 2px solid #ccc; }
+        .success { background: #d4edda; border-color: #28a745; }
+        .error { background: #f8d7da; border-color: #dc3545; }
+        .technique-item {
+            padding: 15px;
+            margin: 10px;
+            background: #f0f0f0;
+            cursor: pointer;
+            border: 2px solid #333;
+        }
+        .technique-item:hover { background: #e0e0e0; }
+    </style>
+</head>
+<body>
+    <h1>🔥 KATAME-WAZA VERLINKUNG TEST 🔥</h1>
+
+    <div id="status"></div>
+
+    <h2>Klicke auf eine Technik:</h2>
+
+    <div class="technique-item" data-id="kesa-gatame">Kesa-gatame (Osaekomi)</div>
+    <div class="technique-item" data-id="juji-gatame">Juji-gatame (Kansetsu)</div>
+    <div class="technique-item" data-id="hadaka-jime">Hadaka-jime (Shime)</div>
+
+    <div id="output" style="margin-top: 20px; padding: 20px; background: #fff; border: 3px solid #000;"></div>
+
+    <!-- NUR Katame-Waza Datenbanken laden -->
+    <script src="techniken-data.js"></script>
+    <script src="kansetsu-data.js"></script>
+    <script src="shime-data.js"></script>
+
+    <script>
+        const statusDiv = document.getElementById('status');
+        const outputDiv = document.getElementById('output');
+
+        // STATUS CHECK
+        let html = '<h2>Datenbank Status:</h2>';
+
+        if (typeof OSAEKOMI_WAZA !== 'undefined') {
+            html += `<div class="result success">✅ OSAEKOMI_WAZA geladen: ${OSAEKOMI_WAZA.length} Techniken</div>`;
+            console.log('OSAEKOMI_WAZA:', OSAEKOMI_WAZA);
+        } else {
+            html += '<div class="result error">❌ OSAEKOMI_WAZA NICHT GELADEN!</div>';
+        }
+
+        if (typeof KANSETSU_WAZA !== 'undefined') {
+            html += `<div class="result success">✅ KANSETSU_WAZA geladen: ${KANSETSU_WAZA.length} Techniken</div>`;
+            console.log('KANSETSU_WAZA:', KANSETSU_WAZA);
+        } else {
+            html += '<div class="result error">❌ KANSETSU_WAZA NICHT GELADEN!</div>';
+        }
+
+        if (typeof SHIME_WAZA !== 'undefined') {
+            html += `<div class="result success">✅ SHIME_WAZA geladen: ${SHIME_WAZA.length} Techniken</div>`;
+            console.log('SHIME_WAZA:', SHIME_WAZA);
+        } else {
+            html += '<div class="result error">❌ SHIME_WAZA NICHT GELADEN!</div>';
+        }
+
+        statusDiv.innerHTML = html;
+
+        // CLICK HANDLER - exakt wie in script.js
+        document.addEventListener('click', function(e) {
+            const techniqueItem = e.target.closest('.technique-item');
+            if (!techniqueItem) return;
+
+            const techniqueId = techniqueItem.getAttribute('data-id');
+            console.log('=== CLICKED:', techniqueId);
+
+            let technique = null;
+
+            // Exakt die gleiche Logik wie in script.js
+            if (typeof OSAEKOMI_WAZA !== 'undefined') {
+                technique = OSAEKOMI_WAZA.find(t => t.id === techniqueId);
+                if (technique) console.log('✅ Found in OSAEKOMI_WAZA');
+            }
+
+            if (!technique && typeof KANSETSU_WAZA !== 'undefined') {
+                technique = KANSETSU_WAZA.find(t => t.id === techniqueId);
+                if (technique) console.log('✅ Found in KANSETSU_WAZA');
+            }
+
+            if (!technique && typeof SHIME_WAZA !== 'undefined') {
+                technique = SHIME_WAZA.find(t => t.id === techniqueId);
+                if (technique) console.log('✅ Found in SHIME_WAZA');
+            }
+
+            if (!technique) {
+                outputDiv.innerHTML = `
+                    <h2 style="color: red;">❌ NICHT GEFUNDEN: ${techniqueId}</h2>
+                    <p>Die Technik wurde in keiner Datenbank gefunden!</p>
+                `;
+                console.error('❌ Technique not found:', techniqueId);
+                return;
+            }
+
+            // ERFOLGREICH GEFUNDEN
+            outputDiv.innerHTML = `
+                <h2 style="color: green;">✅ GEFUNDEN: ${technique.name}</h2>
+                <p><strong>ID:</strong> ${technique.id}</p>
+                <p><strong>Name DE:</strong> ${technique.nameDE}</p>
+                <p><strong>Kategorie:</strong> ${technique.kategorie}</p>
+                <p><strong>Video:</strong> ${technique.videoUrl || 'Kein Video'}</p>
+                <hr>
+                <h3>Vollständige Daten:</h3>
+                <pre style="background: #f0f0f0; padding: 10px; overflow: auto;">${JSON.stringify(technique, null, 2)}</pre>
+            `;
+            console.log('✅ SUCCESS:', technique);
+        });
+    </script>
+</body>
+</html>

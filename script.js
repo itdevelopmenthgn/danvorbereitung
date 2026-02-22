@@ -238,14 +238,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
 
-                    ${!isNageWaza && tech.schlüsselpunkte ? '' : `
+                    ${isNageWaza && tech.schlüsselpunkte ? `
                         <div class="tips-box">
                             <h3>Schlüsselpunkte</h3>
                             <ul class="key-points-list">
                                 ${tech.schlüsselpunkte.map(s => `<li>${s}</li>`).join('')}
                             </ul>
                         </div>
-                    `}
+                    ` : ''}
 
                     <div class="tips-box">
                         <h3>Häufige Fehler</h3>
